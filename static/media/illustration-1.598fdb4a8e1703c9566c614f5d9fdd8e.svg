@@ -1,0 +1,15 @@
+<svg width="600" height="360" viewBox="0 0 600 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#7C7BFF" />
+      <stop offset="1" stop-color="#6AD5FF" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" rx="24" fill="url(#g1)" opacity="0.12" />
+  <circle cx="120" cy="80" r="60" fill="#FF7A90" opacity="0.15" />
+  <circle cx="480" cy="220" r="90" fill="#FFD36B" opacity="0.12" />
+  <g opacity="0.98" fill="#fff">
+    <text x="40" y="200" font-size="28" font-family="Inter, Arial">Bright Web D</text>
+    <text x="40" y="235" font-size="14" font-family="Inter, Arial" opacity="0.9">Design · Build · Launch</text>
+  </g>
+</svg>
