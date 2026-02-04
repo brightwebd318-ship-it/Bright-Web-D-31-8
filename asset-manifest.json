@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Bright-Web-D-31-8/static/css/main.9afe4ced.css",
+    "main.css": "/Bright-Web-D-31-8/static/css/main.9785ccb2.css",
     "main.js": "/Bright-Web-D-31-8/static/js/main.760042b2.js",
     "static/js/453.b9256582.chunk.js": "/Bright-Web-D-31-8/static/js/453.b9256582.chunk.js",
     "index.html": "/Bright-Web-D-31-8/index.html",
     "static/media/illustration-1.svg": "/Bright-Web-D-31-8/static/media/illustration-1.598fdb4a8e1703c9566c614f5d9fdd8e.svg",
     "static/media/illustration-2.svg": "/Bright-Web-D-31-8/static/media/illustration-2.21914fc7efba92261e081b011e70c4b2.svg",
-    "main.9afe4ced.css.map": "/Bright-Web-D-31-8/static/css/main.9afe4ced.css.map",
+    "main.9785ccb2.css.map": "/Bright-Web-D-31-8/static/css/main.9785ccb2.css.map",
     "main.760042b2.js.map": "/Bright-Web-D-31-8/static/js/main.760042b2.js.map",
     "453.b9256582.chunk.js.map": "/Bright-Web-D-31-8/static/js/453.b9256582.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9afe4ced.css",
+    "static/css/main.9785ccb2.css",
     "static/js/main.760042b2.js"
   ]
 }
