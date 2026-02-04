@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Home(){
+export default function Home() {
   const featuredTestimonials = [
-    {name: 'Sarah Chen', company: 'Tech Startup Co.', feedback: 'Delivered in 10 days with a 35% conversion increase. Fantastic work!', rating: 5},
-    {name: 'Mike Thompson', company: 'Local Shop Goods', feedback: 'Affordable, quality work. My online orders jumped to 50+/month.', rating: 5},
-    {name: 'Jessica Park', company: 'Wellness Brand', feedback: 'The redesign felt like launching a completely new business!', rating: 5}
+    { name: 'Sarah Chen', company: 'Tech Startup Co.', feedback: 'Delivered in 10 days with a 35% conversion increase. Fantastic work!', rating: 5 },
+    { name: 'Mike Thompson', company: 'Local Shop Goods', feedback: 'Affordable, quality work. My online orders jumped to 50+/month.', rating: 5 },
+    { name: 'Jessica Park', company: 'Wellness Brand', feedback: 'The redesign felt like launching a completely new business!', rating: 5 }
   ];
 
   const renderStars = (rating) => {
-    return Array.from({length: 5}).map((_, i) => (
+    return Array.from({ length: 5 }).map((_, i) => (
       <span key={i} className={`star ${i < rating ? 'filled' : ''}`}>★</span>
     ));
   };
@@ -16,15 +17,15 @@ export default function Home(){
   return (
     <div>
       <section className="hero">
-        <h1>Bright Web D 31:8 — Modern Websites That Grow Your Business</h1>
-        <div className="hero-sub">
+        <div className="hero-sub eyebrow">
           <span className="pill">Get a Free Website Consultation</span>
           <span className="pill">Reserve Your Free Website for Startups</span>
         </div>
+        <h1><span className="hero-quote">"The best way to predict the future is to create it."</span></h1>
         <p className="lead">Free website development for startups &amp; affordable solutions for small businesses. <span className="highlight">Launch fast — stand out beautifully.</span></p>
         <div className="ctas">
-          <a className="btn primary" href="/contact">Contact Us Now</a>
-          <a className="btn ghost" href="/contact">Get My Free Website</a>
+          <Link className="btn primary" to="/contact">Contact Us Now</Link>
+          <Link className="btn ghost" to="/contact">Get My Free Website</Link>
         </div>
       </section>
 
@@ -54,9 +55,12 @@ export default function Home(){
             <blockquote className="testimonial">“Bright Web D delivered our site ahead of schedule — beautiful design and great support.” — <strong>Happy Client</strong></blockquote>
 
             <div className="client-logos" aria-hidden="true">
-              <div className="logo">Client A</div>
-              <div className="logo">Client B</div>
-              <div className="logo">Client C</div>
+              <div className="logo">TechFlow</div>
+              <div className="logo">LuxeRetail</div>
+              <div className="logo">ZenBeauty</div>
+              <div className="logo">SparkDev</div>
+              <div className="logo">UrbanEats</div>
+              <div className="logo">GreenOrbit</div>
             </div>
           </div>
         </div>
@@ -73,15 +77,15 @@ export default function Home(){
             </div>
           ))}
         </div>
-        <p className="testi-link"><a href="/testimonials">See all client stories →</a></p>
+        <p className="testi-link"><Link to="/testimonials">See all client stories →</Link></p>
       </section>
 
       <section className="cta-invite">
         <h2>Start Your Online Journey with Bright Web D 31:8 Today!</h2>
         <p className="cta-sub">Get a Free Website Consultation — Reserve Your Free Website for Startups</p>
         <div className="ctas">
-          <a className="btn primary" href="/contact">Contact Us Now</a>
-          <a className="btn ghost" href="/contact">Get My Free Website</a>
+          <Link className="btn primary" to="/contact">Contact Us Now</Link>
+          <Link className="btn ghost" to="/contact">Get My Free Website</Link>
         </div>
         <p className="contact-line">📧 Contact us: brightwebd318@gmail.com</p>
       </section>
