@@ -11,6 +11,11 @@
   background: linear-gradient(135deg, #0f1729 0%, #1a2847 25%, #162d4a 50%, #1e3a5f 75%, #0d1b2a 100%);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
