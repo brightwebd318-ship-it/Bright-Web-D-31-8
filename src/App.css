@@ -16,6 +16,10 @@
   max-width: 1200px;
   height: auto;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .animated-bg {
