@@ -175,14 +175,65 @@ h1 {
   gap: 20px;
 }
 
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #00d4ff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 .nav-links a {
   color: rgba(240, 244, 248, 0.85);
   margin-left: 0;
-  /* Changed from 24px because of gap: 20px in parent */
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
-  transition: color .2s ease;
+  transition: all .2s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00d4ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #00d4ff;
 }
 
 .nav-links a:hover {
@@ -323,6 +374,18 @@ main {
 .btn.ghost:hover {
   background: rgba(0, 212, 255, 0.1);
   border-color: rgba(0, 212, 255, 0.8);
+}
+
+/* Glassmorphism 2.0 */
+.card,
+.testi-card,
+.testimonial-card,
+.plan,
+.info-card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .services {
@@ -1567,18 +1630,55 @@ footer {
     padding: 0 10px;
   }
 
+  .menu-toggle {
+    display: flex;
+  }
+
   .nav-links {
+    display: flex;
     flex-direction: column;
-    background: #0b0f2a;
+    background: rgba(11, 15, 42, 0.98);
+    backdrop-filter: blur(20px);
     position: absolute;
     top: 60px;
     right: 0;
     width: 100%;
-    padding: 20px;
+    padding: 40px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    font-weight: 700;
   }
 
   .brand {
     font-size: 18px;
+  }
+}
+
+/* Entrance Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealIn 0.8s forwards;
+}
+
+@keyframes revealIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

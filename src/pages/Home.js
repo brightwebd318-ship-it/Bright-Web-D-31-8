@@ -29,7 +29,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="trust" aria-labelledby="trust-heading">
+      <section className="trust reveal" aria-labelledby="trust-heading">
         <h2 id="trust-heading">Why clients choose Bright Web D 31:8</h2>
         <div className="trust-grid">
           <div className="trust-badges">
@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="featured-testimonials">
+      <section className="featured-testimonials reveal">
         <h2>What Our Clients Say</h2>
         <div className="testimonials-row">
           {featuredTestimonials.map((t, i) => (
@@ -80,7 +80,7 @@ export default function Home() {
         <p className="testi-link"><Link to="/testimonials">See all client stories →</Link></p>
       </section>
 
-      <section className="cta-invite">
+      <section className="cta-invite reveal">
         <h2>Start Your Online Journey with Bright Web D 31:8 Today!</h2>
         <p className="cta-sub">Get a Free Website Consultation — Reserve Your Free Website for Startups</p>
         <div className="ctas">
@@ -90,7 +90,7 @@ export default function Home() {
         <p className="contact-line">📧 Contact us: brightwebd318@gmail.com</p>
       </section>
 
-      <section className="services" aria-labelledby="services-heading">
+      <section className="services reveal" aria-labelledby="services-heading">
         <div className="card">
           <h3>Design & Branding</h3>
           <p>Strategic design that communicates your values.</p>

@@ -20,8 +20,13 @@ import Refund from './pages/Refund';
 import Admin from './pages/Admin';
 
 function App() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <div className="app">
+    <div className={`app ${menuOpen ? 'menu-open' : ''}`}>
       <div className="animated-bg">
         <div className="blob b1" />
         <div className="blob b2" />
@@ -31,31 +36,41 @@ function App() {
       <Router>
         <header className="nav">
           <div className="brand">Bright Web D <span className="verse">31:8</span></div>
-          <nav className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/portfolio">Portfolio</Link>
-            <Link to="/pricing">Pricing</Link>
-            <Link to="/about">About</Link>
-            <Link to="/testimonials">Testimonials</Link>
-            <Link to="/contact">Contact</Link>
-            {/* Admin route not exposed in main nav; visit /admin to access */}
+
+          <button
+            className={`menu-toggle ${menuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
+            <Link to="/" onClick={closeMenu}>Home</Link>
+            <Link to="/services" onClick={closeMenu}>Services</Link>
+            <Link to="/portfolio" onClick={closeMenu}>Portfolio</Link>
+            <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
+            <Link to="/about" onClick={closeMenu}>About</Link>
+            <Link to="/testimonials" onClick={closeMenu}>Testimonials</Link>
+            <Link to="/contact" onClick={closeMenu}>Contact</Link>
           </nav>
         </header>
 
         <main>
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/services" element={<Services/>} />
-            <Route path="/portfolio" element={<Portfolio/>} />
-            <Route path="/contact" element={<Contact/>} />
-            <Route path="/admin" element={<Admin/>} />
-              <Route path="/faq" element={<FAQ/>} />
-              <Route path="/pricing" element={<Pricing/>} />
-              <Route path="/privacy" element={<Privacy/>} />
-              <Route path="/terms" element={<Terms/>} />            <Route path="/testimonials" element={<Testimonials/>} />
-            <Route path="/refund" element={<Refund/>} />          </Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/refund" element={<Refund />} />          </Routes>
         </main>
 
         <footer>
