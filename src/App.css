@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+
+  --radius: 18px;
+}
+
 .App {
   text-align: center;
 }
@@ -13,6 +23,10 @@
   position: relative;
   overflow-x: hidden;
   background: linear-gradient(135deg, #0f1729 0%, #1a2847 25%, #162d4a 50%, #1e3a5f 75%, #0d1b2a 100%);
+}
+
+section {
+  padding: var(--space-xl) var(--space-sm);
 }
 
 img {
@@ -29,7 +43,7 @@ h1 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 var(--space-sm);
 }
 
 .flex-center {
@@ -134,7 +148,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
+  padding: var(--space-sm) var(--space-md);
   background: rgba(15, 23, 41, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -237,11 +251,11 @@ main {
 
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: var(--space-xl) var(--space-md);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: var(--space-md);
 }
 
 .hero h1 {
@@ -383,8 +397,8 @@ main {
 
 .card {
   background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(79, 172, 254, 0.05));
-  padding: 22px;
-  border-radius: 16px;
+  padding: var(--space-md);
+  border-radius: var(--radius);
   width: 280px;
   text-align: left;
   box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
@@ -449,6 +463,17 @@ footer {
   margin-top: 80px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(15, 23, 41, 0.5);
+}
+
+.footer-in.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  position: relative;
+  z-index: 1000;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .footer-inner {
