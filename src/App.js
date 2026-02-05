@@ -19,6 +19,8 @@ import Testimonials from './pages/Testimonials';
 import Refund from './pages/Refund';
 import Admin from './pages/Admin';
 
+import Logo from './components/Logo';
+
 function App() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
@@ -35,7 +37,10 @@ function App() {
 
       <Router>
         <header className="nav">
-          <div className="brand">Bright Web D <span className="verse">31:8</span></div>
+          <div className="brand">
+            <Logo />
+            <span>Bright Web D <span className="verse">31:8</span></span>
+          </div>
 
           <button
             className={`menu-toggle ${menuOpen ? 'active' : ''}`}
