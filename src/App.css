@@ -19,12 +19,8 @@ img {
 .container {
   width: 100%;
   max-width: 1200px;
-  height: auto;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .flex-center {
