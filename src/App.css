@@ -1353,6 +1353,10 @@ footer {
     text-align: center !important;
   }
 
+  .hero {
+    padding: 70px 16px !important;
+  }
+
   .container {
     padding: 0 16px;
     text-align: center;
@@ -1364,14 +1368,14 @@ footer {
   /* Typography Fixes */
   h1,
   .hero h1 {
-    font-size: 28px !important;
+    font-size: 26px !important;
     line-height: 1.2 !important;
     letter-spacing: -0.02em !important;
     text-align: center !important;
   }
 
   .hero .lead {
-    font-size: 16px;
+    font-size: 15px !important;
     line-height: 1.5;
     padding: 0 10px;
     text-align: center !important;
@@ -1387,23 +1391,23 @@ footer {
   /* Navigation & Mobile Menu Centering */
   .nav {
     display: flex;
-    justify-content: center !important;
+    justify-content: space-between !important;
     position: relative;
-    padding: 12px 16px;
+    padding: 12px 24px;
   }
 
   .brand {
     font-size: 18px;
-    margin: 0 auto !important;
-    text-align: center;
+    margin: 0 !important;
+    text-align: left;
   }
 
   .menu-toggle {
     display: flex;
-    position: absolute !important;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative !important;
+    right: 0;
+    top: auto;
+    transform: none;
   }
 
   .nav-links {
@@ -1454,14 +1458,25 @@ footer {
 
   .services,
   .grid,
+  .pricing-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+    text-align: center !important;
+  }
+
   .testimonials-row,
-  .pricing-grid,
-  .contact-grid,
-  .footer-inner {
+  .contact-grid {
     flex-direction: column !important;
     align-items: center !important;
     display: flex !important;
     text-align: center !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
   }
 
   .card,
