@@ -1456,14 +1456,12 @@ footer {
     font-size: 16px;
   }
 
-  .app .services,
-  .app .grid,
-  .app .pricing-grid {
+  .services,
+  .grid,
+  .pricing-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    align-items: stretch;
-    text-align: center;
   }
 
   .app .testimonials-row,
