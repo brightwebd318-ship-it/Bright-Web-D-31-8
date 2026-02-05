@@ -1475,8 +1475,10 @@ footer {
   }
 
   .contact-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1.2fr !important;
     display: grid !important;
+    gap: 20px !important;
+    text-align: left !important;
   }
 
   .card,
