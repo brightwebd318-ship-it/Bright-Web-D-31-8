@@ -170,9 +170,15 @@ h1 {
   font-weight: 700;
 }
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
 .nav-links a {
   color: rgba(240, 244, 248, 0.85);
-  margin-left: 24px;
+  margin-left: 0;
+  /* Changed from 24px because of gap: 20px in parent */
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -1561,13 +1567,17 @@ footer {
   }
 
   .nav-links {
-    display: none !important;
-    /* Hide links on mobile to favor a cleaner look or future menu */
+    flex-direction: column;
+    background: #0b0f2a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .brand {
     font-size: 18px;
-    margin: 0 auto;
-    /* Center brand on mobile if nav links are hidden */
   }
 }
