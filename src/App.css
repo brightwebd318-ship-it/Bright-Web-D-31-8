@@ -245,8 +245,7 @@ main {
 }
 
 .hero h1 {
-  font-size: 48px;
-  /* Standardize with global h1 or use user preference */
+  font-size: clamp(40px, 8vw, 82px);
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.03em;
