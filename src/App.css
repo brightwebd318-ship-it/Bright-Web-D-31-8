@@ -139,8 +139,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 48px;
-  background: rgba(15, 23, 41, 0.85);
+  padding: 12px 24px;
+  background: rgba(15, 23, 41, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
@@ -176,7 +176,7 @@ img {
 main {
   position: relative;
   z-index: 2;
-  padding: 48px 32px 100px;
+  padding: 32px 20px 80px;
   width: 100%;
   max-width: 1200px;
   height: auto;
@@ -185,7 +185,7 @@ main {
 
 .hero {
   text-align: center;
-  padding: 160px 20px 100px;
+  padding: 120px 20px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1513,5 +1513,51 @@ footer {
 
   .trust-grid {
     flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .trust-badges {
+    width: 100%;
+    order: 2;
+  }
+
+  .trust-right {
+    width: 100%;
+    order: 1;
+    align-items: center;
+  }
+
+  .badge {
+    text-align: left;
+    max-width: none;
+  }
+
+  .stat-row {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Fix for horizontal overflow */
+  .hero h1 {
+    font-size: clamp(26px, 10vw, 42px);
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .hero .lead {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .nav-links {
+    display: none !important;
+    /* Hide links on mobile to favor a cleaner look or future menu */
+  }
+
+  .brand {
+    font-size: 18px;
+    margin: 0 auto;
+    /* Center brand on mobile if nav links are hidden */
   }
 }
