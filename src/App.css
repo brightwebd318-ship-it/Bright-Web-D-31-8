@@ -1350,11 +1350,15 @@ footer {
     padding: 60px 16px !important;
     margin-top: 20px !important;
     margin-bottom: 20px !important;
+    text-align: center !important;
   }
 
   .container {
     padding: 0 16px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Typography Fixes */
@@ -1363,23 +1367,43 @@ footer {
     font-size: 28px !important;
     line-height: 1.2 !important;
     letter-spacing: -0.02em !important;
+    text-align: center !important;
   }
 
   .hero .lead {
     font-size: 16px;
     line-height: 1.5;
     padding: 0 10px;
+    text-align: center !important;
   }
 
   .eyebrow {
     font-size: 11px;
     flex-direction: column;
     gap: 8px;
+    align-items: center !important;
   }
 
-  /* Navigation & Mobile Menu */
+  /* Navigation & Mobile Menu Centering */
+  .nav {
+    display: flex;
+    justify-content: center !important;
+    position: relative;
+    padding: 12px 16px;
+  }
+
+  .brand {
+    font-size: 18px;
+    margin: 0 auto !important;
+    text-align: center;
+  }
+
   .menu-toggle {
     display: flex;
+    position: absolute !important;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .nav-links {
@@ -1411,10 +1435,7 @@ footer {
   .nav-links a {
     font-size: 18px;
     font-weight: 700;
-  }
-
-  .brand {
-    font-size: 18px;
+    text-align: center;
   }
 
   /* Section Layout Adjustments */
@@ -1422,6 +1443,7 @@ footer {
     flex-direction: column;
     width: 100%;
     gap: 12px;
+    align-items: center !important;
   }
 
   .btn {
@@ -1434,10 +1456,12 @@ footer {
   .grid,
   .testimonials-row,
   .pricing-grid,
-  .contact-grid {
+  .contact-grid,
+  .footer-inner {
     flex-direction: column !important;
     align-items: center !important;
     display: flex !important;
+    text-align: center !important;
   }
 
   .card,
@@ -1445,35 +1469,72 @@ footer {
   .testimonial-card,
   .plan,
   .info-card,
-  .tile {
+  .tile,
+  .project-card,
+  .service-item,
+  .badge {
     width: 100% !important;
     max-width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 24px 16px !important;
   }
 
-  /* Trust Section ordering */
+  .card h3,
+  .testi-card p,
+  .testimonial-card .feedback,
+  .service-item h3,
+  .info-card h3 {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  /* Trust Section Ordering & Centering */
   .trust-grid {
     flex-direction: column;
     gap: 32px;
+    align-items: center !important;
   }
 
   .trust-badges {
     order: 2;
     width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .trust-right {
     order: 1;
     width: 100%;
+    align-items: center !important;
   }
 
   .stat-row {
-    justify-content: center;
+    justify-content: center !important;
     gap: 20px;
+    width: 100%;
+  }
+
+  .stat {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .testimonial {
+    border-left: none !important;
+    border-top: 4px solid #00d4ff !important;
+    text-align: center !important;
+    padding: 16px !important;
   }
 
   /* Inner elements */
   .support-hero {
     flex-direction: column;
+    align-items: center !important;
   }
 
   .support-ill,
@@ -1483,22 +1544,27 @@ footer {
   }
 
   .footer-inner {
-    flex-direction: column;
     gap: 24px;
-    text-align: center;
   }
-}
 
-/* Entrance Animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: revealIn 0.8s forwards;
-}
+  .foot-links {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px;
+  }
 
-@keyframes revealIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* Entrance Animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealIn 0.8s forwards;
+  }
+
+  @keyframes revealIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
