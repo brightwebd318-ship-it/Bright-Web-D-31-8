@@ -201,7 +201,7 @@ main {
 
 .hero {
   text-align: center;
-  padding: 120px 20px 60px;
+  padding: 100px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1463,7 +1463,8 @@ footer {
   }
 
   .hero {
-    padding: 120px 20px 80px !important;
+    padding: 60px 16px !important;
+    text-align: center;
     margin-top: 0 !important;
   }
 
