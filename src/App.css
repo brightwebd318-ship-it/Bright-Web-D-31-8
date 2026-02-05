@@ -43,6 +43,11 @@ h1 {
     font-size: 28px;
     line-height: 1.3;
   }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+  }
 }
 
 /* Mobile phones */
@@ -283,10 +288,10 @@ main {
 
 .btn {
   padding: 14px 24px;
-  border-radius: 12px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
   transition: all .3s ease;
   cursor: pointer;
   border: none;
