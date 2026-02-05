@@ -1391,23 +1391,23 @@ footer {
   /* Navigation & Mobile Menu Centering */
   .nav {
     display: flex;
-    justify-content: center !important;
+    justify-content: space-between !important;
     position: relative;
     padding: 12px 16px;
   }
 
   .brand {
     font-size: 18px;
-    margin: 0 auto !important;
-    text-align: center;
+    margin: 0;
+    text-align: left;
   }
 
   .menu-toggle {
     display: flex;
-    position: absolute !important;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative !important;
+    right: 0;
+    top: auto;
+    transform: none;
   }
 
   .nav-links {
