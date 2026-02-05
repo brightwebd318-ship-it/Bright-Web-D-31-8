@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Bright-Web-D-31-8/static/css/main.2bf937fc.css",
-    "main.js": "/Bright-Web-D-31-8/static/js/main.00787180.js",
-    "static/js/453.b9256582.chunk.js": "/Bright-Web-D-31-8/static/js/453.b9256582.chunk.js",
-    "index.html": "/Bright-Web-D-31-8/index.html",
-    "static/media/illustration-1.svg": "/Bright-Web-D-31-8/static/media/illustration-1.598fdb4a8e1703c9566c614f5d9fdd8e.svg",
-    "static/media/illustration-2.svg": "/Bright-Web-D-31-8/static/media/illustration-2.21914fc7efba92261e081b011e70c4b2.svg",
-    "main.2bf937fc.css.map": "/Bright-Web-D-31-8/static/css/main.2bf937fc.css.map",
-    "main.00787180.js.map": "/Bright-Web-D-31-8/static/js/main.00787180.js.map",
-    "453.b9256582.chunk.js.map": "/Bright-Web-D-31-8/static/js/453.b9256582.chunk.js.map"
+    "main.css": "/static/css/main.2bf937fc.css",
+    "main.js": "/static/js/main.a32628f3.js",
+    "static/js/453.b9256582.chunk.js": "/static/js/453.b9256582.chunk.js",
+    "index.html": "/index.html",
+    "static/media/illustration-1.svg": "/static/media/illustration-1.598fdb4a8e1703c9566c614f5d9fdd8e.svg",
+    "static/media/illustration-2.svg": "/static/media/illustration-2.21914fc7efba92261e081b011e70c4b2.svg",
+    "main.2bf937fc.css.map": "/static/css/main.2bf937fc.css.map",
+    "main.a32628f3.js.map": "/static/js/main.a32628f3.js.map",
+    "453.b9256582.chunk.js.map": "/static/js/453.b9256582.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2bf937fc.css",
-    "static/js/main.00787180.js"
+    "static/js/main.a32628f3.js"
   ]
 }
