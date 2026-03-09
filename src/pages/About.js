@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function About(){
+export default function About() {
   return (
     <div className="page about">
       <h2>About Bright Web D 31:8</h2>
@@ -11,7 +11,7 @@ export default function About(){
       <section className="cred-section">
         <h3>Our Mission &amp; Vision</h3>
         <p>Mission: Build beautiful, performant websites that help small businesses grow.
-        Vision: Make quality web presence accessible to every startup and shop.</p>
+          Vision: Make quality web presence accessible to every startup and shop.</p>
 
         <h3>Who We Help</h3>
         <p>We partner with startups, small shops, local brands, and growing businesses that need a reliable, modern website without breaking the bank.</p>
@@ -35,16 +35,16 @@ export default function About(){
         <h3>Team</h3>
         <div className="team-grid">
           <div className="member">
-            <div className="avatar">JS</div>
+            <div className="avatar">SS</div>
             <div className="meta">
-              <div className="name">Jordan Smith</div>
+              <div className="name">SHAN SHAJI</div>
               <div className="role">Founder / Lead Developer</div>
             </div>
           </div>
           <div className="member">
-            <div className="avatar">AM</div>
+            <div className="avatar">E</div>
             <div className="meta">
-              <div className="name">Ava Martinez</div>
+              <div className="name">Emmanuvel</div>
               <div className="role">Designer</div>
             </div>
           </div>

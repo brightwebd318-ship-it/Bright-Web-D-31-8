@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   const featuredTestimonials = [
-    { name: 'Sarah Chen', company: 'Tech Startup Co.', feedback: 'Delivered in 10 days with a 35% conversion increase. Fantastic work!', rating: 5 },
-    { name: 'Mike Thompson', company: 'Local Shop Goods', feedback: 'Affordable, quality work. My online orders jumped to 50+/month.', rating: 5 },
-    { name: 'Jessica Park', company: 'Wellness Brand', feedback: 'The redesign felt like launching a completely new business!', rating: 5 },
     { name: 'Director', company: 'EkathaCabsCohin', feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!', rating: 5, link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/' }
   ];
 
@@ -39,16 +36,25 @@ export default function Home() {
 
   return (
     <div>
-      <section className="hero">
-        <div className="hero-sub eyebrow">
-          <span className="pill">Get a Free Website Consultation</span>
-          <span className="pill">Reserve Your Free Website for Startups</span>
+      <section className="hero video-hero">
+        <div className="video-background">
+          <video autoPlay loop muted playsInline>
+            <source src="https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="video-overlay"></div>
         </div>
-        <h1><span className="hero-quote">"The best way to predict the future is to create it."</span></h1>
-        <p className="lead">Free website development for startups &amp; affordable solutions for small businesses. <span className="highlight">Launch fast — stand out beautifully.</span></p>
-        <div className="ctas">
-          <Link className="btn primary" to="/contact">Contact Us Now</Link>
-          <Link className="btn ghost" to="/contact">Get My Free Website</Link>
+        <div className="hero-content">
+          <div className="hero-sub eyebrow">
+            <span className="pill">Get a Free Website Consultation</span>
+            <span className="pill">Reserve Your Free Website for Startups</span>
+          </div>
+          <h1><span className="hero-quote">"The best way to predict the future is to create it."</span></h1>
+          <p className="lead">Free website development for startups &amp; affordable solutions for small businesses. <span className="highlight">Launch fast — stand out beautifully.</span></p>
+          <div className="ctas">
+            <Link className="btn primary" to="/contact">Contact Us Now</Link>
+            <Link className="btn ghost" to="/contact">Get My Free Website</Link>
+          </div>
         </div>
       </section>
 

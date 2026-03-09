@@ -3,54 +3,6 @@ import React from 'react';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Sarah Chen',
-      company: 'Tech Startup Co.',
-      role: 'Co-founder',
-      feedback: 'Bright Web D delivered our site in 10 days. The design is modern, fast, and our conversion rate jumped 35% in the first month.',
-      rating: 5,
-      metric: '35% conversion increase'
-    },
-    {
-      name: 'Mike Thompson',
-      company: 'Local Shop Goods',
-      role: 'Owner',
-      feedback: 'As a small business owner, I needed affordable, quality work. They gave me exactly that. Highly recommend!',
-      rating: 5,
-      metric: '50+ online orders/month'
-    },
-    {
-      name: 'Alex Rodriguez',
-      company: 'Design Studio XYZ',
-      role: 'Creative Director',
-      feedback: 'Professional team, responsive communication, and beautiful end product. Worth every penny.',
-      rating: 5,
-      metric: '2 years of support'
-    },
-    {
-      name: 'Jessica Park',
-      company: 'Wellness Brand',
-      role: 'Founder',
-      feedback: 'They redesigned our old site and it feels like a completely new business. Amazing work!',
-      rating: 5,
-      metric: '300% traffic growth'
-    },
-    {
-      name: 'David Walsh',
-      company: 'Consulting Firm',
-      role: 'VP Operations',
-      feedback: 'Their SEO work helped us rank for our top keywords. Results exceeded expectations.',
-      rating: 4,
-      metric: 'Top 3 for 5 keywords'
-    },
-    {
-      name: 'Emma Liu',
-      company: 'E-shop Premium',
-      role: 'Founder',
-      feedback: 'Great e-commerce setup with Stripe integration. Customers love the checkout flow.',
-      rating: 5,
-      metric: '$50k+ in first 6 months'
-    },
-    {
       name: 'Director',
       company: 'EkathaCabsCohin',
       role: 'Client',

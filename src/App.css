@@ -11,12 +11,12 @@
 
   --radius: 24px;
 
-  --primary: #6366f1;
-  --primary-glow: rgba(99, 102, 241, 0.4);
-  --secondary: #a855f7;
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.4);
+  --secondary: #0ea5e9;
   --accent: #38bdf8;
   --detail: #cbd5e1;
-  --bg-dark: #020617;
+  --bg-dark: #080d1a;
   --glass-border: rgba(255, 255, 255, 0.08);
 }
 
@@ -32,8 +32,8 @@
   overflow-x: hidden;
   background-color: var(--bg-dark);
   background-image:
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%);
 }
 
 section {
@@ -100,7 +100,7 @@ p {
 .b1 {
   width: 600px;
   height: 600px;
-  background: #4f46e5;
+  background: #1d4ed8;
   left: -15%;
   top: -10%;
   filter: blur(120px);
@@ -111,7 +111,7 @@ p {
 .b2 {
   width: 500px;
   height: 500px;
-  background: #7c3aed;
+  background: #0369a1;
   right: -5%;
   top: 5%;
   filter: blur(120px);
@@ -177,7 +177,7 @@ p {
   top: 0;
   z-index: 1000;
   padding: 20px 32px;
-  background: rgba(2, 6, 23, 0.7);
+  background: rgba(8, 13, 26, 0.7);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   display: flex;
@@ -201,7 +201,7 @@ p {
 .logo-icon {
   width: 32px;
   height: 32px;
-  filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
+  filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.5));
 }
 
 .brand .verse {
@@ -290,7 +290,44 @@ main {
 
 .hero {
   text-align: center;
-  padding: 120px 20px 80px;
+}
+
+.hero.video-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  padding: 140px 20px 100px;
+  margin-bottom: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(8, 13, 26, 0.8) 0%, rgba(37, 99, 235, 0.3) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -308,7 +345,7 @@ main {
 }
 
 .hero-quote {
-  background: linear-gradient(135deg, #a855f7 0%, #38bdf8 50%, #a855f7 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #0ea5e9 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -337,7 +374,7 @@ main {
 
 .highlight {
   display: inline-block;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: linear-gradient(90deg, #2563eb, #0284c7);
   color: #fff;
   padding: 4px 12px;
   border-radius: 8px;
@@ -359,14 +396,14 @@ main {
 }
 
 .pill {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   padding: 8px 16px;
   border-radius: 999px;
   font-weight: 600;
   font-size: 13px;
   color: #a5b4fc;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -393,14 +430,14 @@ main {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #2563eb, #0284c7);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
 }
 
 .btn.primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.5);
 }
 
 .btn.ghost {
@@ -478,19 +515,19 @@ main {
   width: 220px;
   height: 120px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.08));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.08));
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   transition: all .3s ease;
 }
 
 .tile:hover {
   transform: translateY(-4px);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.12));
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(14, 165, 233, 0.12));
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
 }
 
 footer {
@@ -602,11 +639,11 @@ footer {
 .page .intro {
   font-size: 1.08rem;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.06));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.06));
   padding: 18px;
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   line-height: 1.7;
 }
 
@@ -630,16 +667,16 @@ footer {
   width: 220px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .faq-list .faq-item {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(168, 85, 247, 0.04));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(14, 165, 233, 0.04));
   padding: 16px;
   border-radius: 12px;
   margin-bottom: 12px;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .pricing-grid {
@@ -650,16 +687,16 @@ footer {
 }
 
 .plan {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(168, 85, 247, 0.04));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(14, 165, 233, 0.04));
   padding: 20px;
   border-radius: 14px;
   min-width: 240px;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: flex-start;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .plan .price {
@@ -680,10 +717,10 @@ footer {
 .featured-testimonials {
   margin: 40px auto 32px;
   padding: 32px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.06));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.06));
   border-radius: 18px;
   text-align: center;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .featured-testimonials h2 {
@@ -700,12 +737,12 @@ footer {
 }
 
 .testi-card {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(168, 85, 247, 0.04));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(14, 165, 233, 0.04));
   padding: 18px;
   border-radius: 12px;
   max-width: 240px;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .testi-card .stars {
@@ -754,17 +791,17 @@ footer {
 }
 
 .testimonial-card {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(168, 85, 247, 0.04));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(14, 165, 233, 0.04));
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
   transition: transform .22s ease, box-shadow .22s ease;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .testimonial-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.2);
 }
 
 .testimonial-card .stars {
@@ -855,14 +892,14 @@ footer {
 }
 
 .info-card {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(79, 172, 254, 0.06));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(79, 172, 254, 0.06));
   padding: 22px;
   border-radius: 14px;
   border-left: 4px solid var(--accent);
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
   transition: transform .3s ease, box-shadow .3s ease;
   animation: slideInLeft .6s both;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .info-card:nth-child(2) {
@@ -875,7 +912,7 @@ footer {
 
 .info-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.2);
 }
 
 .icon-box {
@@ -911,11 +948,11 @@ footer {
 }
 
 .contact-form-wrap {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), rgba(79, 172, 254, 0.03));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(79, 172, 254, 0.03));
   padding: 28px;
   border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 0 12px 36px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   animation: slideInRight .6s both;
 }
 
@@ -968,8 +1005,8 @@ footer {
 
 .form-group input,
 .form-group textarea {
-  background: rgba(99, 102, 241, 0.04);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: rgba(37, 99, 235, 0.04);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   border-radius: 10px;
   padding: 12px 14px;
   color: #fff;
@@ -986,9 +1023,9 @@ footer {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  background: rgba(99, 102, 241, 0.08);
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.2);
 }
 
 .submit-btn {
@@ -1002,7 +1039,7 @@ footer {
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
 }
 
 @keyframes slideInLeft {
@@ -1042,20 +1079,20 @@ footer {
 }
 
 .service-item {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(79, 172, 254, 0.04));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(79, 172, 254, 0.04));
   padding: 22px;
   border-radius: 14px;
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
   transition: transform .22s ease, box-shadow .22s ease;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .service-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.2);
 }
 
 .service-icon {
@@ -1113,9 +1150,9 @@ footer {
 .cred-section {
   margin-top: 28px;
   padding: 22px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(79, 172, 254, 0.04));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(79, 172, 254, 0.04));
   border-radius: 14px;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .cred-section h3 {
@@ -1148,11 +1185,11 @@ footer {
   display: flex;
   gap: 10px;
   align-items: center;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), rgba(79, 172, 254, 0.03));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(79, 172, 254, 0.03));
   padding: 12px;
   border-radius: 10px;
   min-width: 220px;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 .avatar {
@@ -1181,9 +1218,9 @@ footer {
 .trust {
   margin-top: 48px;
   padding: 32px 24px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(79, 172, 254, 0.06));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(79, 172, 254, 0.06));
   border-radius: 18px;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .trust h2 {
@@ -1208,13 +1245,13 @@ footer {
 }
 
 .badge {
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   padding: 14px 16px;
   border-radius: 12px;
   font-weight: 700;
   color: rgba(240, 244, 248, 0.95);
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .trust-right {
@@ -1230,12 +1267,12 @@ footer {
 }
 
 .stat {
-  background: rgba(99, 102, 241, 0.06);
+  background: rgba(37, 99, 235, 0.06);
   padding: 14px 16px;
   border-radius: 12px;
   text-align: center;
   min-width: 120px;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .stat .num {
@@ -1253,7 +1290,7 @@ footer {
 .testimonial {
   margin: 0;
   padding: 14px 16px;
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   border-left: 4px solid var(--accent);
   border-radius: 10px;
   color: rgba(240, 244, 248, 0.95);
@@ -1282,8 +1319,8 @@ footer {
 
 .logo:hover {
   color: var(--accent);
-  background: rgba(99, 102, 241, 0.05);
-  border-color: rgba(99, 102, 241, 0.2);
+  background: rgba(37, 99, 235, 0.05);
+  border-color: rgba(37, 99, 235, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
@@ -1313,19 +1350,19 @@ footer {
 }
 
 .project-card {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), rgba(79, 172, 254, 0.03));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(79, 172, 254, 0.03));
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   transition: transform .22s ease, box-shadow .22s ease;
-  border: 1px solid rgba(99, 102, 241, 0.12)
+  border: 1px solid rgba(37, 99, 235, 0.12)
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12)
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12)
 }
 
 .project-thumb {
