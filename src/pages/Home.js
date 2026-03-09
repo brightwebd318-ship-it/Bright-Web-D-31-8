@@ -5,7 +5,8 @@ export default function Home() {
   const featuredTestimonials = [
     { name: 'Sarah Chen', company: 'Tech Startup Co.', feedback: 'Delivered in 10 days with a 35% conversion increase. Fantastic work!', rating: 5 },
     { name: 'Mike Thompson', company: 'Local Shop Goods', feedback: 'Affordable, quality work. My online orders jumped to 50+/month.', rating: 5 },
-    { name: 'Jessica Park', company: 'Wellness Brand', feedback: 'The redesign felt like launching a completely new business!', rating: 5 }
+    { name: 'Jessica Park', company: 'Wellness Brand', feedback: 'The redesign felt like launching a completely new business!', rating: 5 },
+    { name: 'Director', company: 'EkathaCabsCohin', feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!', rating: 5, link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/' }
   ];
 
   const renderStars = (rating) => {
@@ -95,7 +96,15 @@ export default function Home() {
             <div className="testi-card" key={i}>
               <div className="stars">{renderStars(t.rating)}</div>
               <p>"{t.feedback}"</p>
-              <div className="author">{t.name} — {t.company}</div>
+              <div className="author">
+                {t.name} — {t.link ? (
+                  <a href={t.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', cursor: 'pointer', pointerEvents: 'auto', position: 'relative', zIndex: 10 }}>
+                    {t.company}
+                  </a>
+                ) : (
+                  t.company
+                )}
+              </div>
             </div>
           ))}
         </div>

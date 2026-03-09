@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Testimonials(){
+export default function Testimonials() {
   const testimonials = [
     {
       name: 'Sarah Chen',
@@ -49,11 +49,20 @@ export default function Testimonials(){
       feedback: 'Great e-commerce setup with Stripe integration. Customers love the checkout flow.',
       rating: 5,
       metric: '$50k+ in first 6 months'
+    },
+    {
+      name: 'Director',
+      company: 'EkathaCabsCohin',
+      role: 'Client',
+      feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!',
+      rating: 5,
+      metric: 'Excellent Online Presence',
+      link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/'
     }
   ];
 
   const renderStars = (rating) => {
-    return Array.from({length: 5}).map((_, i) => (
+    return Array.from({ length: 5 }).map((_, i) => (
       <span key={i} className={`star ${i < rating ? 'filled' : ''}`}>★</span>
     ));
   };
@@ -72,7 +81,15 @@ export default function Testimonials(){
             <p className="feedback">"{t.feedback}"</p>
             <div className="client-info">
               <div className="name">{t.name}</div>
-              <div className="role">{t.role} @ {t.company}</div>
+              <div className="role">
+                {t.role} @ {t.link ? (
+                  <a href={t.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', cursor: 'pointer', pointerEvents: 'auto', position: 'relative', zIndex: 10 }}>
+                    {t.company}
+                  </a>
+                ) : (
+                  t.company
+                )}
+              </div>
             </div>
             <div className="metric">📈 {t.metric}</div>
           </div>
