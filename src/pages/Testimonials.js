@@ -10,6 +10,15 @@ export default function Testimonials() {
       rating: 5,
       metric: 'Excellent Online Presence',
       link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/'
+    },
+    {
+      name: 'Client',
+      company: 'Home2Home',
+      role: 'Client',
+      feedback: 'Outstanding service and a brilliant website delivered. Highly recommended!',
+      rating: 5,
+      metric: 'Excellent Online Presence',
+      link: 'https://brightwebd318-ship-it.github.io/HOME2HOME/'
     }
   ];
 

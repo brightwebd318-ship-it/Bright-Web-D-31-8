@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   const featuredTestimonials = [
-    { name: 'Director', company: 'EkathaCabsCohin', feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!', rating: 5, link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/' }
+    { name: 'Director', company: 'EkathaCabsCohin', feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!', rating: 5, link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/' },
+    { name: 'Client', company: 'Home2Home', feedback: 'Outstanding service and a brilliant website delivered. Highly recommended!', rating: 5, link: 'https://brightwebd318-ship-it.github.io/HOME2HOME/' }
   ];
 
   const renderStars = (rating) => {
