@@ -1,8 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function About() {
   return (
-    <div className="page about">
+    <div className="page about-page">
+      <SEO
+        title="About Us"
+        description="Learn more about BrightWebD 31:8. We are a dedicated team of web developers and digital marketers based in Kochi, focused on empowering startups."
+        keywords="about BrightWebD, Kochi web agency, startup growth partners Kerala"
+      />
       <h2>About Bright Web D 31:8</h2>
       <p className="intro">At Bright Web D 31:8, we specialize in web development and design that helps startups, small shops, and growing businesses succeed online.</p>
       <p className="mission">Our mission is simple: turn your ideas into high-quality, responsive websites that attract customers and build trust.</p>

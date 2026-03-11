@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import slideMarketing from '../assets/slide_marketing.png';
 import uiDesign from '../assets/ui_design_abstract_1773205075484.png';
 import workspaceCoding from '../assets/workspace_coding_1773205021067.png';
@@ -23,7 +24,12 @@ export default function Portfolio(){
   const visible = filter === 'All' ? SAMPLE_PROJECTS : SAMPLE_PROJECTS.filter(p => p.category === filter);
 
   return (
-    <div className="page">
+    <div className="page portfolio-page">
+      <SEO 
+        title="Our Portfolio" 
+        description="Check out our latest projects at BrightWebD 31:8. We deliver high-quality web solutions for diverse industries in Kochi and beyond."
+        keywords="web development portfolio, BrightWebD projects, website design examples Kochi"
+      />
       <div className="portfolio-header">
         <div>
           <h2>Portfolio</h2>

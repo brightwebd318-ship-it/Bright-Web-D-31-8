@@ -1,7 +1,8 @@
 import React from 'react';
 import Ill from '../assets/illustration-1.svg';
+import SEO from '../components/SEO';
 
-export default function Pricing(){
+const Pricing = () => {
   const plans = [
     {name: 'Startup (Free)', price: 'Free', bullets: ['Limited slots', 'Basic brochure site', 'Email support']},
     {name: 'Starter', price: '$499', bullets: ['Custom design', 'Responsive', '1 month support']},
@@ -10,6 +11,11 @@ export default function Pricing(){
 
   return (
     <div className="page pricing-page">
+      <SEO 
+        title="Pricing Plans" 
+        description="Affordable web development and digital marketing packages by BrightWebD 31:8 in Kochi. Transparent pricing for startups and small businesses."
+        keywords="web development cost kochi, digital marketing packages Kerala, affordable website pricing"
+      />
       <div className="pricing-hero">
         <div>
           <h2>Pricing & Packages</h2>
@@ -33,3 +39,5 @@ export default function Pricing(){
     </div>
   );
 }
+
+export default Pricing;

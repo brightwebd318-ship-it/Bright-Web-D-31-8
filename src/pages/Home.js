@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import slideWebDev from '../assets/slide_webdev.png';
 import slideSEO from '../assets/slide_seo.png';

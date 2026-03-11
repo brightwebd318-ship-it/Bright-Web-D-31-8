@@ -31,6 +31,11 @@ export default function Contact() {
 
   return (
     <div className="page contact-page">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with BrightWebD 31:8 for your web development and digital marketing needs in Kochi. Free consulting for startups."
+        keywords="contact BrightWebD, hire web developers Kochi, digital marketing consultation Kerala"
+      />
       <div className="contact-header">
         <h2>Let's Work Together</h2>
         <p className="lead">Get in touch with us. We respond within 24 hours.</p>

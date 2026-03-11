@@ -1,4 +1,4 @@
-import React from 'react';
+import SEO from '../components/SEO';
 
 export default function Services(){
   const items = [
@@ -6,6 +6,21 @@ export default function Services(){
       title: 'Website Development',
       desc: 'Fast, secure, and scalable websites tailored for your business.',
       benefits: ['Modern tech stack (React/Next/static sites)', 'Fast loading and secure hosting', 'Scalable setup to grow with you']
+    },
+    {
+      title: 'Web3 & Decentralized Apps',
+      desc: 'Innovative Web3 solutions including blockchain integration and smart contracts.',
+      benefits: ['Ethereum & Solana development', 'NFT marketplaces & DAO setup', 'Secure wallet integrations']
+    },
+    {
+      title: 'AI Integration (Sarvam AI / Meta)',
+      desc: 'Leverage the power of AI with Sarvam AI and Meta technologies to automate your business.',
+      benefits: ['Custom AI chatbots & virtual assistants', 'Predictive analytics & data processing', 'NLP using Sarvam AI & Meta Llama']
+    },
+    {
+      title: 'Cloud Dev (Google Colab / Replit)',
+      desc: 'Speed up your development cycle with cloud-based environments like Google Colab and Replit.',
+      benefits: ['Zero-setup dev environments', 'Collaborative coding & GPU acceleration', 'Automatic deployments and hosting']
     },
     {
       title: 'Web Design (UI/UX)',
@@ -41,6 +56,11 @@ export default function Services(){
 
   return (
     <div className="page services-page">
+      <SEO 
+        title="Our Services" 
+        description="Explore our range of services: Web3 development, AI integration (Sarvam AI, Meta), Cloud solutions (Google Colab, Replit), and premium web design in Kochi."
+        keywords="Web3 development kochi, Sarvam AI integration, Meta AI solutions, Google Colab web services, Replit hosting Kochi, affordable web dev"
+      />
       <h2>What We Do at Bright Web D 31:8</h2>
       <p className="muted">Key services tailored to startups, small shops, and growing businesses.</p>
 
