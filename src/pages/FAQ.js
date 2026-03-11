@@ -1,4 +1,4 @@
-import React from 'react';
+import SEO from '../components/SEO';
 import Ill from '../assets/illustration-2.svg';
 
 export default function FAQ(){
@@ -8,8 +8,26 @@ export default function FAQ(){
     {q: 'Do you provide ongoing support?', a: 'Yes — we offer maintenance plans with backups, updates, and priority support.'}
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <div className="page support-page">
+      <SEO 
+        title="FAQ" 
+        description="Frequently Asked Questions about BrightWebD's services, delivery timelines, and support for startups in Kochi."
+        schema={faqSchema}
+      />
       <div className="support-hero">
         <img src={Ill} alt="support illustration" className="support-ill" />
         <div>

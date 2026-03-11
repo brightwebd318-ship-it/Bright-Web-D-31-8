@@ -11,8 +11,8 @@ const slides = [
   {
     img: slideWebDev,
     tag: '⚡ Web Development',
-    heading: 'Web Development in Kochi',
-    sub: 'Lightning-fast, pixel-perfect React & modern framework websites built to convert visitors into customers.',
+    heading: 'Web Development in Kochi | BrightWebD 31:8',
+    sub: 'Lightning-fast, pixel-perfect React & modern framework websites built to convert visitors into customers in Kochi, Kerala.',
     cta: '/services',
     ctaLabel: 'Explore Services',
     accent: '#06b6d4',
@@ -195,6 +195,28 @@ export default function Home() {
         title="Home" 
         description="BrightWebD 31:8 — Professional web development in Kochi. We build affordable, high-performance websites for startups and small businesses."
         keywords="webdevelopment in kochi, web development kochi, SEO services, startup web design, BrightWebD Kochi"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What services does BrightWebD 31:8 offer in Kochi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer premium web development, SEO optimization, social media management, and full-funnel digital marketing services tailored for startups and small businesses in Kochi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does BrightWebD provide free websites for startups?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we have a special initiative to provide free website consulting and development support for eligible startups to help them kickstart their digital journey."
+              }
+            }
+          ]
+        }}
       />
       {/* ── Hero Slider ── */}
       <HeroSlider />
