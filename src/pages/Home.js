@@ -11,7 +11,7 @@ const slides = [
   {
     img: slideWebDev,
     tag: '⚡ Web Development',
-    heading: 'Next-Gen Websites',
+    heading: 'Web Development in Kochi',
     sub: 'Lightning-fast, pixel-perfect React & modern framework websites built to convert visitors into customers.',
     cta: '/services',
     ctaLabel: 'Explore Services',
@@ -193,8 +193,8 @@ export default function Home() {
     <div>
       <SEO 
         title="Home" 
-        description="BrightWebD 31:8 — Professional web development and digital marketing agency in Kochi. We build affordable websites for startups."
-        keywords="web development kochi, SEO services, startup web design, BrightWebD Kochi"
+        description="BrightWebD 31:8 — Professional web development in Kochi. We build affordable, high-performance websites for startups and small businesses."
+        keywords="webdevelopment in kochi, web development kochi, SEO services, startup web design, BrightWebD Kochi"
       />
       {/* ── Hero Slider ── */}
       <HeroSlider />
