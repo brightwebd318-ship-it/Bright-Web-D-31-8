@@ -191,6 +191,11 @@ export default function Home() {
 
   return (
     <div>
+      <SEO 
+        title="Home" 
+        description="BrightWebD 31:8 — Professional web development and digital marketing agency in Kochi. We build affordable websites for startups."
+        keywords="web development kochi, SEO services, startup web design, BrightWebD Kochi"
+      />
       {/* ── Hero Slider ── */}
       <HeroSlider />
 

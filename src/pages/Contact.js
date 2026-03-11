@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
