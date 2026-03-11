@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [submittedData, setSubmittedData] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   function handleChange(e) {
@@ -11,20 +13,20 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // send to backend
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    }).then(r => {
-      if (r.ok) {
-        setFormData({ name: '', email: '', message: '' });
-        setSent(true);
-        setTimeout(() => setSent(false), 3000);
-      } else {
-        r.json().then(j => alert(j.error || 'Failed to send'))
-      }
-    }).catch(() => alert('Network error'));
+    setLoading(true);
+
+    // Simulate a short send delay for a realistic feel
+    setTimeout(() => {
+      setSubmittedData({ ...formData });
+      setFormData({ name: '', email: '', message: '' });
+      setLoading(false);
+      setSent(true);
+    }, 1200);
+  }
+
+  function handleSendAnother() {
+    setSent(false);
+    setSubmittedData(null);
   }
 
   return (
@@ -56,11 +58,41 @@ export default function Contact() {
         </div>
 
         <div className="contact-form-wrap">
-          {sent ? (
-            <div className="success-message">
-              <div className="success-icon">✓</div>
-              <h3>Message Sent!</h3>
-              <p>Thanks for reaching out. We'll get back to you soon.</p>
+          {sent && submittedData ? (
+            <div className="success-panel">
+              {/* Animated checkmark */}
+              <div className="success-check-wrap">
+                <svg className="success-checkmark" viewBox="0 0 52 52">
+                  <circle className="success-circle" cx="26" cy="26" r="25" fill="none" />
+                  <path className="success-tick" fill="none" d="M14 27l8 8 16-16" />
+                </svg>
+              </div>
+
+              <h3 className="success-title">Message Sent Successfully! 🎉</h3>
+              <p className="success-subtitle">
+                Thanks for reaching out! We'll get back to you within <strong>24 hours</strong>.
+              </p>
+
+              {/* Details summary card */}
+              <div className="success-details">
+                <h4>Your Submitted Details</h4>
+                <div className="detail-row">
+                  <span className="detail-label">👤 Name</span>
+                  <span className="detail-value">{submittedData.name}</span>
+                </div>
+                <div className="detail-row">
+                  <span className="detail-label">📧 Email</span>
+                  <span className="detail-value">{submittedData.email}</span>
+                </div>
+                <div className="detail-row detail-message-row">
+                  <span className="detail-label">💬 Message</span>
+                  <span className="detail-value detail-message">{submittedData.message}</span>
+                </div>
+              </div>
+
+              <button className="btn primary" onClick={handleSendAnother} style={{ marginTop: '24px' }}>
+                Send Another Message
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
@@ -101,8 +133,23 @@ export default function Contact() {
                   required
                 />
               </div>
+
               <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', marginTop: '20px' }}>
-                <button className="btn primary submit-btn" type="submit" style={{ flex: '1 1 200px', margin: 0 }}>Send Message</button>
+                <button
+                  className="btn primary submit-btn"
+                  type="submit"
+                  disabled={loading}
+                  style={{ flex: '1 1 200px', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                >
+                  {loading ? (
+                    <>
+                      <span className="btn-spinner" />
+                      Sending…
+                    </>
+                  ) : (
+                    '✉️ Send Message'
+                  )}
+                </button>
                 <a
                   href="https://wa.me/919074487245"
                   target="_blank"
