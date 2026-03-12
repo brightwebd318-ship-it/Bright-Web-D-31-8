@@ -5,6 +5,8 @@ import slideWebDev from '../assets/slide_webdev.png';
 import slideSEO from '../assets/slide_seo.png';
 import slideSocial from '../assets/slide_social.png';
 import slideMarketing from '../assets/slide_marketing.png';
+import Contact from './Contact';
+import Services from './Services';
 
 /* ─── Slider Data ─────────────────────────────────────────────────── */
 const slides = [
@@ -227,6 +229,9 @@ export default function Home() {
       {/* ── Animated Quote Banner ── */}
       <QuoteBanner />
 
+      {/* ── Services Section ── */}
+      <Services isSection={true} />
+
       {/* ── Why Choose Us ── */}
       <section className="trust reveal" aria-labelledby="trust-heading">
         <h2 id="trust-heading">Why Clients Choose <span style={{ color: '#06b6d4' }}>Bright Web D 31:8</span></h2>
@@ -287,6 +292,9 @@ export default function Home() {
         </div>
         <p className="contact-line">📧 Contact us: brightwebd318@gmail.com</p>
       </section>
+
+      {/* ── Contact Section ── */}
+      <Contact isSection={true} />
     </div>
   );
 }

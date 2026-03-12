@@ -1,6 +1,6 @@
 import SEO from '../components/SEO';
 
-export default function Services(){
+export default function Services({ isSection = false }){
   const items = [
     {
       title: 'Website Development',
@@ -55,29 +55,31 @@ export default function Services(){
   ];
 
   return (
-    <div className="page services-page">
-      <SEO 
-        title="Our Services" 
-        description="Explore our range of services: Web3 development, AI integration (Sarvam AI, Meta), Cloud solutions (Google Colab, Replit), and premium web design in Kochi."
-        keywords="Web3 development kochi, Sarvam AI integration, Meta AI solutions, Google Colab web services, Replit hosting Kochi, affordable web dev"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "itemListElement": items.map((s, i) => ({
-            "@type": "ListItem",
-            "position": i + 1,
-            "item": {
-              "@type": "Service",
-              "name": s.title,
-              "description": s.desc,
-              "provider": {
-                "@type": "Organization",
-                "name": "BrightWebD 31:8"
+    <div id={isSection ? "services" : undefined} className={isSection ? "page services-section reveal" : "page services-page"}>
+      {!isSection && (
+        <SEO 
+          title="Our Services" 
+          description="Explore our range of services: Web3 development, AI integration (Sarvam AI, Meta), Cloud solutions (Google Colab, Replit), and premium web design in Kochi."
+          keywords="Web3 development kochi, Sarvam AI integration, Meta AI solutions, Google Colab web services, Replit hosting Kochi, affordable web dev"
+          schema={{
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": items.map((s, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "item": {
+                "@type": "Service",
+                "name": s.title,
+                "description": s.desc,
+                "provider": {
+                  "@type": "Organization",
+                  "name": "BrightWebD 31:8"
+                }
               }
-            }
-          }))
-        }}
-      />
+            }))
+          }}
+        />
+      )}
       <h2>What We Do at Bright Web D 31:8</h2>
       <p className="muted">Key services tailored to startups, small shops, and growing businesses.</p>
 

@@ -12,7 +12,6 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
-import Pricing from './pages/Pricing';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Testimonials from './pages/Testimonials';
@@ -55,7 +54,6 @@ function App() {
               <Link to="/" onClick={closeMenu}>Home</Link>
               <Link to="/services" onClick={closeMenu}>Services</Link>
               <Link to="/portfolio" onClick={closeMenu}>Portfolio</Link>
-              <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
               <Link to="/about" onClick={closeMenu}>About</Link>
               <Link to="/testimonials" onClick={closeMenu}>Testimonials</Link>
               <Link to="/contact" onClick={closeMenu}>Contact</Link>
@@ -71,7 +69,6 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/faq" element={<FAQ />} />
-              <Route path="/pricing" element={<Pricing />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />            <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/refund" element={<Refund />} />          </Routes>
@@ -87,7 +84,6 @@ function App() {
                 <Link to="/">Home</Link>
                 <Link to="/services">Services</Link>
                 <Link to="/portfolio">Portfolio</Link>
-                <Link to="/pricing">Pricing</Link>
                 <Link to="/about">About</Link>
                 <Link to="/testimonials">Testimonials</Link>
                 <Link to="/contact">Contact</Link>

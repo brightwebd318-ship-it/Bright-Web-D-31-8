@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 
-export default function Contact() {
+export default function Contact({ isSection = false }) {
   const [sent, setSent] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -31,12 +31,14 @@ export default function Contact() {
   }
 
   return (
-    <div className="page contact-page">
-      <SEO
-        title="Contact Us"
-        description="Get in touch with BrightWebD 31:8 for your web development and digital marketing needs in Kochi. Free consulting for startups."
-        keywords="contact BrightWebD, hire web developers Kochi, digital marketing consultation Kerala"
-      />
+    <div id={isSection ? "contact" : undefined} className={isSection ? "page contact-section reveal" : "page contact-page"}>
+      {!isSection && (
+        <SEO
+          title="Contact Us"
+          description="Get in touch with BrightWebD 31:8 for your web development and digital marketing needs in Kochi. Free consulting for startups."
+          keywords="contact BrightWebD, hire web developers Kochi, digital marketing consultation Kerala"
+        />
+      )}
       <div className="contact-header">
         <h2>Let's Work Together</h2>
         <p className="lead">Get in touch with us. We respond within 24 hours.</p>
