@@ -1,9 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Ill from '../assets/illustration-2.svg';
 
 export default function Refund(){
   return (
     <div className="page refund-page">
+      <SEO 
+        title="Refund Policy" 
+        description="Understand our refund and cancellation policies for web development projects at BrightWebD 31:8."
+        keywords="refund policy, cancellation policy, BrightWebD terms"
+      />
       <div className="support-hero">
         <img src={Ill} alt="refund illustration" className="support-ill" />
         <div>

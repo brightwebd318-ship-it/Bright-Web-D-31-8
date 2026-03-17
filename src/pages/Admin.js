@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 
 export default function Admin(){
   const [password, setPassword] = useState('');
@@ -45,6 +46,7 @@ export default function Admin(){
   if(!token){
     return (
       <div className="page">
+        <SEO title="Admin Login" noindex={true} />
         <h2>Admin Login</h2>
         <form onSubmit={login} style={{maxWidth:420, marginTop:12}}>
           <div className="form-group">
@@ -59,6 +61,7 @@ export default function Admin(){
 
   return (
     <div className="page">
+      <SEO title="Admin Dashboard" noindex={true} />
       <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
         <h2>Admin — Messages</h2>
         <div>

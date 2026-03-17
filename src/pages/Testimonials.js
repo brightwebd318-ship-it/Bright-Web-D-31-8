@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function Testimonials() {
   const testimonials = [
@@ -30,6 +31,11 @@ export default function Testimonials() {
 
   return (
     <div className="page testimonials-page">
+      <SEO 
+        title="Testimonials" 
+        description="Read what our clients say about BrightWebD 31:8. Real success stories from startups and businesses in Kochi."
+        keywords="BrightWebD testimonials, client reviews, web development success stories Kochi"
+      />
       <h2>Client Testimonials & Success Stories</h2>
       <p className="muted">Real feedback from real clients. Here's what they've accomplished with Bright Web D 31:8.</p>
 

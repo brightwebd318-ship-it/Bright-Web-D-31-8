@@ -1,9 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Ill from '../assets/illustration-1.svg';
 
 export default function Privacy(){
   return (
     <div className="page privacy-page">
+      <SEO 
+        title="Privacy Policy" 
+        description="Our commitment to your privacy. Learn how BrightWebD 31:8 handles and protects your data."
+        keywords="privacy policy, data protection, BrightWebD privacy"
+      />
       <div className="support-hero">
         <img src={Ill} alt="privacy illustration" className="support-ill" />
         <div>

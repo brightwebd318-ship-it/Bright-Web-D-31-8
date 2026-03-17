@@ -1,9 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Ill from '../assets/illustration-2.svg';
 
 export default function Terms(){
   return (
     <div className="page terms-page">
+      <SEO 
+        title="Terms of Service" 
+        description="Read the terms and conditions for using BrightWebD 31:8 services. Clear and transparent service agreements."
+        keywords="terms of service, BrightWebD legal, service agreement"
+      />
       <div className="support-hero">
         <img src={Ill} alt="terms illustration" className="support-ill" />
         <div>
