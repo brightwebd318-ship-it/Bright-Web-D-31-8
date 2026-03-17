@@ -60,7 +60,7 @@ export default function Services({ isSection = false }){
         <SEO 
           title="Our Services" 
           description="Explore our range of services: Web3 development, AI integration (Sarvam AI, Meta), Cloud solutions (Google Colab, Replit), and premium web design in Kochi."
-          keywords="Web3 development kochi, Sarvam AI integration, Meta AI solutions, Google Colab web services, Replit hosting Kochi, affordable web dev"
+          keywords="webdevelopment in kochi, web designing, react webdevelopment in kochi, small websites, Web3 development kochi, Sarvam AI integration, Meta AI solutions"
           schema={{
             "@context": "https://schema.org",
             "@type": "ItemList",

@@ -196,7 +196,7 @@ export default function Home() {
       <SEO 
         title="Home" 
         description="BrightWebD 31:8 — Professional web development in Kochi. We build affordable, high-performance websites for startups and small businesses."
-        keywords="webdevelopment in kochi, web development kochi, SEO services, startup web design, BrightWebD Kochi"
+        keywords="webdevelopment in kochi, web designing, web desiging, react webdevelopment in kochi, small websites, startup web design, BrightWebD Kochi"
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
