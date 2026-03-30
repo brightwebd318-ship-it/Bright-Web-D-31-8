@@ -37,7 +37,9 @@ function App() {
         <Router>
           <header className="nav">
             <div className="brand">
-              <span>Bright Web D <span className="verse">31:8</span></span>
+              <Link to="/" onClick={closeMenu}>
+                <span>Bright Web D <span className="verse">31:8</span></span>
+              </Link>
             </div>
 
             <button

@@ -9,7 +9,7 @@ export default function Testimonials() {
       role: 'Client',
       feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!',
       rating: 5,
-      metric: 'Excellent Online Presence',
+      metric: 'Delivered a Stunning Website as per our requirements and within the agreed timeline.',
       link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/'
     },
     {
