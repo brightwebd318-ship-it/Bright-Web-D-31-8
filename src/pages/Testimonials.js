@@ -10,7 +10,7 @@ export default function Testimonials() {
       feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!',
       rating: 5,
       metric: 'Excellent Online Presence',
-      link: 'https://brightwebd318-ship-it.github.io/EkthaCabsCochin/'
+      link: 'https://www.ekthacabscochin.com/'
     },
     {
       name: 'Client',
