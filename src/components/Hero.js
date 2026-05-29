@@ -211,7 +211,7 @@ export default function Hero() {
           <div className="hv2-stats">
             <StatCard value={100} suffix="+"   label="Projects Delivered" icon="🚀" start={started} />
             <StatCard value={50}  suffix="+"   label="Happy Clients"      icon="⭐" start={started} />
-            <StatCard value={5}   suffix=" yrs" label="Experience"         icon="🏆" start={started} />
+            <StatCard value={3}   suffix=" yrs" label="Experience"         icon="🏆" start={started} />
           </div>
 
           {/* SEO keyword pills */}

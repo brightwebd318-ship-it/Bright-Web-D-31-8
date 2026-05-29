@@ -51,6 +51,24 @@ export default function Portfolio() {
       metric: "#1 Search Ranking in Kochi",
       metrics: { traffic: "+280%", conversion: "9.2%", loadSpeed: "1.1s" },
       image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      title: "Contractor",
+      category: "Development",
+      desc: "React & Firebase construction management tool with local offline capability. Features progress upload streams, subcontractor fee logs, and interactive client workspaces.",
+      metric: "99.8% System Uptime",
+      metrics: { traffic: "+125%", conversion: "14.2%", loadSpeed: "1.0s" },
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+      liveLink: "https://brightwebd318-ship-it.github.io/ApexBuildSaaS/"
+    },
+    {
+      title: "BrightWebD",
+      category: "Web Design",
+      desc: "Our official digital agency portal built with sleek dark modes, interactive comparison sliders, SEO-driven routing, and automated SSG compiling.",
+      metric: "99/100 Mobile Speed Score",
+      metrics: { traffic: "+180%", conversion: "15.4%", loadSpeed: "0.8s" },
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+      liveLink: "https://brightwebd.com"
     }
   ];
 

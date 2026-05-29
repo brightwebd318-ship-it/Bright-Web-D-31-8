@@ -42,7 +42,7 @@ export default function Home() {
   const projectsCount = useCountUp(120, 2000, statsActive);
   const clientsCount = useCountUp(85, 2000, statsActive);
   const countriesCount = useCountUp(8, 1500, statsActive);
-  const experienceCount = useCountUp(6, 1000, statsActive);
+  const experienceCount = useCountUp(3, 1000, statsActive);
 
   // Track dragging testimonials
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -216,6 +216,24 @@ export default function Home() {
       metric: "#1 Rankings in Local Areas",
       metrics: { clicks: "+340%", conversion: "11.5%", speed: "1.1s" },
       image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      title: "Contractor",
+      category: "Development",
+      desc: "React & Firebase construction management tool with local offline capability. Features progress upload streams, subcontractor fee logs, and interactive client workspaces.",
+      metric: "99.8% System Uptime",
+      metrics: { clicks: "+125%", conversion: "14.2%", speed: "1.0s" },
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+      liveLink: "https://brightwebd318-ship-it.github.io/ApexBuildSaaS/"
+    },
+    {
+      title: "BrightWebD",
+      category: "Web Design",
+      desc: "Our official digital agency portal built with sleek dark modes, interactive comparison sliders, SEO-driven routing, and automated SSG compiling.",
+      metric: "99/100 Mobile Speed Score",
+      metrics: { clicks: "+180%", conversion: "15.4%", speed: "0.8s" },
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+      liveLink: "https://brightwebd.com"
     }
   ];
 
