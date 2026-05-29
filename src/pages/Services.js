@@ -1,103 +1,91 @@
+import React from 'react';
 import SEO from '../components/SEO';
+import { Link } from 'react-router-dom';
+import { Palette, Monitor, Search, Code, Lock, Terminal, FileText, Database } from 'lucide-react';
 
-export default function Services({ isSection = false }){
-  const items = [
+export default function Services({ isSection = false }) {
+  const serviceItems = [
     {
-      title: 'Website Development',
-      desc: 'Fast, secure, and scalable websites tailored for your business.',
-      benefits: ['Modern tech stack (React/Next/static sites)', 'Fast loading and secure hosting', 'Scalable setup to grow with you']
+      title: 'Website Design (UI/UX)',
+      icon: <Palette size={24} />,
+      desc: 'High-end layout wireframes, typography details, and responsive styling built in Figma.',
+      link: '/services/web-design',
+      benefits: ['Custom Figma branding guidelines', 'High conversion visual layouts', 'Fully interactive desktop & mobile prototypes']
     },
     {
-      title: 'Web3 & Decentralized Apps',
-      desc: 'Innovative Web3 solutions including blockchain integration and smart contracts.',
-      benefits: ['Ethereum & Solana development', 'NFT marketplaces & DAO setup', 'Secure wallet integrations']
+      title: 'Web Development',
+      icon: <Code size={24} />,
+      desc: 'Zero-bloat React, Next, and static page coding optimized for Core Web Vitals performance parameters.',
+      link: '/services/development',
+      benefits: ['Production React frameworks', 'Instant load times & caching', 'Secure domain and server CDNs']
     },
     {
-      title: 'AI Integration (Sarvam AI / Meta)',
-      desc: 'Leverage the power of AI with Sarvam AI and Meta technologies to automate your business.',
-      benefits: ['Custom AI chatbots & virtual assistants', 'Predictive analytics & data processing', 'NLP using Sarvam AI & Meta Llama']
+      title: 'SEO Optimization',
+      icon: <Search size={24} />,
+      desc: 'Deploying JSON-LD meta schemas, canonical routing maps, FAQ rich snippets, and keyword indexing scripts.',
+      link: '/services/seo',
+      benefits: ['FAQ / LocalBusiness metadata schemas', 'On-page keyword density checks', 'Console crawl crawling diagnostic checks']
     },
     {
-      title: 'Cloud Dev (Google Colab / Replit)',
-      desc: 'Speed up your development cycle with cloud-based environments like Google Colab and Replit.',
-      benefits: ['Zero-setup dev environments', 'Collaborative coding & GPU acceleration', 'Automatic deployments and hosting']
-    },
-    {
-      title: 'Web Design (UI/UX)',
-      desc: 'Clean, modern, and user-friendly interfaces that convert.',
-      benefits: ['User-first layouts', 'Accessible design (WCAG-aware)', 'Clickable prototypes for quick feedback']
-    },
-    {
-      title: 'E-commerce Websites',
-      desc: 'Sell products online with confidence — carts, payments, and inventory.',
-      benefits: ['Secure payment integration', 'Inventory & order workflows', 'Conversion-focussed product pages']
-    },
-    {
-      title: 'Landing Pages',
-      desc: 'High-conversion pages for promotions & ads.',
-      benefits: ['A/B ready layouts', 'Fast FCP for ad traffic', 'Clear CTA and tracking setup']
-    },
-    {
-      title: 'Website Redesign',
-      desc: 'Refresh your old site with a modern look and improved performance.',
-      benefits: ['Visual refresh and UX improvements', 'SEO-friendly migrations', 'Performance uplift']
-    },
-    {
-      title: 'Maintenance & Support',
-      desc: 'Keep your website updated and running smoothly.',
-      benefits: ['Regular backups & updates', 'Uptime and performance monitoring', 'Fast support SLAs']
-    },
-    {
-      title: 'SEO / Performance Optimization',
-      desc: 'Improve discoverability and speed to bring more traffic and conversions.',
-      benefits: ['Technical SEO fixes', 'Performance audits & fixes', 'Analytics and ranking guidance']
+      title: 'Ecommerce Solutions',
+      icon: <Database size={24} />,
+      desc: 'Secure storefront layouts, Stripe payment flows, responsive cart views, and headless shop database connections.',
+      link: '/services/development',
+      benefits: ['Stripe payment checkout flows', 'Headless Shopify database integrations', 'High performance catalog search features']
     }
   ];
 
-  return (
-    <div id={isSection ? "services" : undefined} className={isSection ? "page services-section reveal" : "page services-page"}>
-      {!isSection && (
-        <SEO 
-          title="Our Services" 
-          description="Explore our range of services: Web3 development, AI integration (Sarvam AI, Meta), Cloud solutions (Google Colab, Replit), and premium web design in Kochi."
-          keywords="webdevelopment in kochi, web designing, react webdevelopment in kochi, small websites, Web3 development kochi, Sarvam AI integration, Meta AI solutions"
-          schema={{
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": items.map((s, i) => ({
-              "@type": "ListItem",
-              "position": i + 1,
-              "item": {
-                "@type": "Service",
-                "name": s.title,
-                "description": s.desc,
-                "provider": {
-                  "@type": "Organization",
-                  "name": "BrightWebD 31:8"
-                }
-              }
-            }))
-          }}
-        />
-      )}
-      <h2>What We Do at Bright Web D 31:8</h2>
-      <p className="muted">Key services tailored to startups, small shops, and growing businesses.</p>
+  const content = (
+    <div className="container">
+      {/* Header */}
+      <div className="section-header">
+        <span className="section-tag">Capabilities Blueprint</span>
+        <h2 className="section-title">Our Suite of <span>Digital Solutions</span></h2>
+        <p className="section-desc">Designed to support local construction businesses, hotels, tech startups, healthcare portals, and ecommerce brands.</p>
+      </div>
 
-      <div className="services-list">
-        {items.map((s) => (
-          <div className="service-item" key={s.title}>
-            <div className="service-icon">{s.title.split(' ').slice(0,2).map(w=>w[0]).join('')}</div>
-            <div className="service-body">
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-              <ul className="benefits">
-                {s.benefits.map((b, i) => <li key={i}>{b}</li>)}
-              </ul>
+      {/* Grid */}
+      <div className="services-interactive-grid" style={{ marginBottom: '60px' }}>
+        {serviceItems.map((s, idx) => (
+          <div className="glass-card service-interactive-card" key={idx}>
+            <div className="service-card-icon-box">
+              {s.icon}
             </div>
+            <h3 className="service-card-title">{s.title}</h3>
+            <p className="service-card-desc">{s.desc}</p>
+            <ul className="service-card-benefit-list">
+              {s.benefits.map((b, i) => (
+                <li key={i}>
+                  <Terminal size={12} style={{ color: 'var(--primary)', marginRight: '4px' }} />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <Link to={s.link} className="service-card-cta-link" style={{ marginTop: 'auto' }}>
+              <span>View details</span>
+            </Link>
           </div>
         ))}
       </div>
     </div>
   );
-}
 
+  if (isSection) {
+    return (
+      <section className="services-section-wrapper section-alt" id="services">
+        {content}
+      </section>
+    );
+  }
+
+  return (
+    <div className="page services-page-wrapper" style={{ paddingTop: '100px', paddingBottom: '80px' }}>
+      <SEO 
+        title="Custom Web Design Services & React Development Options"
+        description="Browse our range of digital solutions: custom business website design, technical search optimizations, React codebases, and Stripe checkouts."
+        keywords="web design services, custom web development, ecommerce solutions Kochi, website redesign parameters"
+      />
+      {content}
+    </div>
+  );
+}

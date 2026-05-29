@@ -1,189 +1,260 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import { Mail, MessageSquare, Phone, Upload, CheckCircle, Clock } from 'lucide-react';
 
 export default function Contact({ isSection = false }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+    budget: '3000',
+    company: ''
+  });
+  const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  function handleChange(e) {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleFileChange = (e) => {
+    if (e.target.files[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate a short send delay for a realistic feel
     setTimeout(() => {
-      setSubmittedData({ ...formData });
-      setFormData({ name: '', email: '', message: '' });
-      setLoading(false);
+      setSubmittedData({ 
+        ...formData, 
+        fileName: file ? file.name : 'No file uploaded' 
+      });
       setSent(true);
-    }, 1200);
-  }
+      setLoading(false);
+      
+      // Push event to console for mock CRM integration
+      console.log('CRM INTEGRATION LOG - NEW INQUIRY RECEIVED:', {
+        ...formData,
+        uploadedFile: file ? { name: file.name, size: file.size } : null,
+        timestamp: new Date().toISOString()
+      });
+    }, 1500);
+  };
 
-  function handleSendAnother() {
+  const resetForm = () => {
+    setFormData({ name: '', email: '', message: '', budget: '3000', company: '' });
+    setFile(null);
     setSent(false);
-    setSubmittedData(null);
-  }
+  };
+
+  const formatBudget = (val) => {
+    if (parseInt(val) >= 10000) return '$10,000+ (Enterprise System)';
+    return `$${parseInt(val).toLocaleString()} USD`;
+  };
 
   return (
-    <div id={isSection ? "contact" : undefined} className={isSection ? "page contact-section reveal" : "page contact-page"}>
+    <div id={isSection ? "contact" : undefined} className={isSection ? "page contact-section reveal" : "page contact-page"} style={{ paddingTop: isSection ? '0px' : '100px', paddingBottom: '80px' }}>
       {!isSection && (
-        <SEO
-          title="Contact Us"
-          description="Get in touch with BrightWebD 31:8 for your web development and digital marketing needs in Kochi. Free consulting for startups."
-          keywords="contact BrightWebD, hire web developers Kochi, digital marketing consultation Kerala"
+        <SEO 
+          title="Contact Us & Request Custom Website Consultation"
+          description="Submit a project request to BrightWebD web design company. Set your budget slider, upload design sheets, or book a consultation call."
+          keywords="contact BrightWebD, hire web developers Kochi, budget website design inquiry, digital marketing consultation"
         />
       )}
-      <div className="contact-header">
-        <h2>Let's Work Together</h2>
-        <p className="lead">Get in touch with us. We respond within 24 hours.</p>
-      </div>
 
-      <div className="contact-grid">
-        <div className="contact-info">
-          <div className="info-card">
-            <div className="icon-box">📧</div>
-            <h3>Email</h3>
-            <p><a href="mailto:brightwebd318@gmail.com">brightwebd318@gmail.com</a></p>
+      <div className="container">
+        {/* Header */}
+        {!isSection && (
+          <div className="section-header">
+            <span className="section-tag">Let's Connect</span>
+            <h1 className="section-title">Schedule a <span>Strategy Session</span></h1>
+            <p className="section-desc">Submit your project targets below. Our engineering leads respond within 24 business hours.</p>
           </div>
+        )}
 
-          <div className="info-card">
-            <div className="icon-box">📞</div>
-            <h3>Quick Response</h3>
-            <p>We reply within 24 hours on business days.</p>
-          </div>
-
-          <div className="info-card">
-            <div className="icon-box">💬</div>
-            <h3>Chat</h3>
-            <p>Use the form to send a detailed message.</p>
-          </div>
-        </div>
-
-        <div className="contact-form-wrap">
-          {sent && submittedData ? (
-            <div className="success-panel">
-              {/* Animated checkmark */}
-              <div className="success-check-wrap">
-                <svg className="success-checkmark" viewBox="0 0 52 52">
-                  <circle className="success-circle" cx="26" cy="26" r="25" fill="none" />
-                  <path className="success-tick" fill="none" d="M14 27l8 8 16-16" />
-                </svg>
-              </div>
-
-              <h3 className="success-title">Message Sent Successfully! 🎉</h3>
-              <p className="success-subtitle">
-                Thanks for reaching out! We'll get back to you within <strong>24 hours</strong>.
-              </p>
-
-              {/* Details summary card */}
-              <div className="success-details">
-                <h4>Your Submitted Details</h4>
-                <div className="detail-row">
-                  <span className="detail-label">👤 Name</span>
-                  <span className="detail-value">{submittedData.name}</span>
+        <div className="contact-grid-wrapper">
+          {/* Sidebar */}
+          <div className="contact-card-sidebar">
+            <div className="glass-card" style={{ padding: '32px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--text-main)' }}>Direct Pathways</h3>
+              
+              <div className="contact-info-block">
+                <div className="info-icon-wrapper">
+                  <Mail size={20} />
                 </div>
-                <div className="detail-row">
-                  <span className="detail-label">📧 Email</span>
-                  <span className="detail-value">{submittedData.email}</span>
-                </div>
-                <div className="detail-row detail-message-row">
-                  <span className="detail-label">💬 Message</span>
-                  <span className="detail-value detail-message">{submittedData.message}</span>
+                <div className="info-block-content">
+                  <h4>Email Communication</h4>
+                  <p><a href="mailto:brightwebd318@gmail.com" style={{ color: 'var(--primary)' }}>brightwebd318@gmail.com</a></p>
                 </div>
               </div>
 
-              <button className="btn primary" onClick={handleSendAnother} style={{ marginTop: '24px' }}>
-                Send Another Message
+              <div className="contact-info-block">
+                <div className="info-icon-wrapper">
+                  <Phone size={20} />
+                </div>
+                <div className="info-block-content">
+                  <h4>WhatsApp Quick Connect</h4>
+                  <p><a href="https://wa.me/919074487245" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 'bold' }}>+91 90744 87245</a></p>
+                </div>
+              </div>
+
+              <div className="contact-info-block">
+                <div className="info-icon-wrapper">
+                  <Clock size={20} />
+                </div>
+                <div className="info-block-content">
+                  <h4>Operation Hours</h4>
+                  <p>Mon - Fri, 09:00 AM - 06:00 PM IST</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card" style={{ padding: '24px', background: 'var(--bg-section-alt)', textAlign: 'center' }}>
+              <MessageSquare size={32} style={{ color: 'var(--primary)', marginBottom: '12px', margin: '0 auto 12px' }} />
+              <h4 style={{ fontSize: '15px', fontWeight: 'bold', marginBottom: '8px' }}>Free 30-Min Consultation</h4>
+              <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px' }}>Prefer booking an instant video slot with our software architects?</p>
+              <button onClick={() => window.scrollTo(0, 0)} className="btn btn-secondary" style={{ width: '100%', padding: '10px' }}>
+                Open Scheduling Calendar
               </button>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
+          </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
+          {/* Form Area */}
+          <div className="contact-form-container">
+            {sent && submittedData ? (
+              <div className="glass-card success-checkmark-card">
+                <div className="checkmark-circle-icon">
+                  <CheckCircle size={32} />
+                </div>
+                <h3 style={{ fontSize: '22px', color: 'var(--text-main)', marginBottom: '12px' }}>Inquiry Sent Successfully!</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
+                  Thank you for submitting your project parameters. A senior developer will evaluate your design assets and reach out shortly.
+                </p>
+                
+                <div style={{ background: 'rgba(0,0,0,0.1)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '20px', textAlign: 'left', marginBottom: '24px', fontSize: '13px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <h4 style={{ color: 'var(--primary)', marginBottom: '8px' }}>Your Submission Log:</h4>
+                  <div><strong>Name:</strong> {submittedData.name}</div>
+                  <div><strong>Email:</strong> {submittedData.email}</div>
+                  <div><strong>Project Budget:</strong> {formatBudget(submittedData.budget)}</div>
+                  <div><strong>Asset File:</strong> {submittedData.fileName}</div>
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Project Details</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your project, goals, and timeline..."
-                  required
-                />
-              </div>
-
-              <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', marginTop: '20px' }}>
-                <button
-                  className="btn primary submit-btn"
-                  type="submit"
-                  disabled={loading}
-                  style={{ flex: '1 1 200px', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-                >
-                  {loading ? (
-                    <>
-                      <span className="btn-spinner" />
-                      Sending…
-                    </>
-                  ) : (
-                    '✉️ Send Message'
-                  )}
+                <button className="btn btn-secondary" onClick={resetForm}>
+                  Send Another Request
                 </button>
-                <a
-                  href="https://wa.me/919074487245"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn submit-btn"
-                  style={{
-                    flex: '1 1 200px',
-                    margin: 0,
-                    backgroundColor: '#25D366',
-                    borderColor: '#25D366',
-                    color: 'white',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
-                  }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                  </svg>
-                  WhatsApp Us
-                </a>
               </div>
-            </form>
-          )}
+            ) : (
+              <form onSubmit={handleSubmit} className="glass-card" style={{ padding: '32px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="form-group-block">
+                    <label htmlFor="name">Full Name *</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      className="form-input-field" 
+                      placeholder="Jane Doe" 
+                      value={formData.name} 
+                      onChange={handleInputChange} 
+                      required 
+                    />
+                  </div>
+                  <div className="form-group-block">
+                    <label htmlFor="company">Company Name</label>
+                    <input 
+                      type="text" 
+                      id="company" 
+                      name="company" 
+                      className="form-input-field" 
+                      placeholder="Acme Corp" 
+                      value={formData.company} 
+                      onChange={handleInputChange} 
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group-block">
+                  <label htmlFor="email">Work Email *</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    className="form-input-field" 
+                    placeholder="jane@company.com" 
+                    value={formData.email} 
+                    onChange={handleInputChange} 
+                    required 
+                  />
+                </div>
+
+                {/* Project Budget Slider */}
+                <div className="form-group-block budget-selector-wrapper">
+                  <label>Project Budget Threshold *</label>
+                  <div className="budget-val-indicator">
+                    {formatBudget(formData.budget)}
+                  </div>
+                  <input 
+                    type="range" 
+                    name="budget" 
+                    min="1000" 
+                    max="10000" 
+                    step="500" 
+                    className="range-slider-input" 
+                    value={formData.budget} 
+                    onChange={handleInputChange} 
+                  />
+                </div>
+
+                <div className="form-group-block">
+                  <label htmlFor="message">Project Requirements Brief *</label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="4" 
+                    className="form-textarea-field" 
+                    placeholder="Briefly describe your pages targets, custom integrations and timeline goals..." 
+                    value={formData.message} 
+                    onChange={handleInputChange} 
+                    required 
+                  />
+                </div>
+
+                {/* File Upload Box */}
+                <div className="form-group-block">
+                  <label>Design Sheets or Requirements Briefs (PDF/TXT/Images)</label>
+                  <div className="file-upload-input-wrap" onClick={() => document.getElementById('file-upload').click()}>
+                    <Upload size={24} style={{ margin: '0 auto 8px', color: 'var(--text-muted)' }} />
+                    <p style={{ fontWeight: '500' }}>
+                      {file ? `Selected file: ${file.name}` : 'Click to select or drag and drop files'}
+                    </p>
+                    <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>Max file size: 10MB</span>
+                    <input 
+                      type="file" 
+                      id="file-upload" 
+                      style={{ display: 'none' }} 
+                      onChange={handleFileChange} 
+                      accept=".pdf,.txt,.doc,.docx,.png,.jpg,.jpeg" 
+                    />
+                  </div>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="btn btn-primary btn-glow" 
+                  style={{ width: '100%', marginTop: '24px', height: '48px' }}
+                  disabled={loading}
+                >
+                  {loading ? 'Sending Parameters...' : '✉ Submit Project Request'}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </div>
