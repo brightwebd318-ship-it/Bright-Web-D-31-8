@@ -108,9 +108,13 @@ export default function Contact({ isSection = false, openCalendly }) {
                     <span style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'block' }}>India Support:</span>
                     <a href="https://wa.me/919074487245" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 'bold' }}>+91 90744 87245</a>
                   </p>
-                  <p>
+                  <p style={{ marginBottom: '8px' }}>
                     <span style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'block' }}>Germany Support:</span>
                     <a href="https://wa.me/4917680714896" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 'bold' }}>+49 176 80714896</a>
+                  </p>
+                  <p>
+                    <span style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'block' }}>Germany Support:</span>
+                    <a href="https://wa.me/4917632789783" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 'bold' }}>+49 176 32789783</a>
                   </p>
                 </div>
               </div>
