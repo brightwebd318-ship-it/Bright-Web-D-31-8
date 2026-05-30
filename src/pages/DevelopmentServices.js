@@ -33,6 +33,7 @@ export default function DevelopmentServices() {
         title="Website Development Agency & Custom Ecommerce Solutions"
         description="BrightWebD is a premium website development agency building custom web apps, React platforms, Stripe e-commerce, and digital business systems."
         keywords="website development agency, ecommerce development, digital solutions company, react development agency, custom API integration"
+        image="https://brightwebd.com/assets/slide_webdev.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",

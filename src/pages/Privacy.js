@@ -13,7 +13,7 @@ export default function Privacy(){
       <div className="support-hero">
         <img src={Ill} alt="privacy illustration" className="support-ill" />
         <div>
-          <h2>Privacy Policy (Summary)</h2>
+          <h1>Privacy Policy (Summary)</h1>
           <p className="muted">We respect your privacy. This summary outlines how we handle data.</p>
         </div>
       </div>

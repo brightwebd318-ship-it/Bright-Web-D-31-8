@@ -13,7 +13,7 @@ export default function Terms(){
       <div className="support-hero">
         <img src={Ill} alt="terms illustration" className="support-ill" />
         <div>
-          <h2>Terms of Service (Summary)</h2>
+          <h1>Terms of Service (Summary)</h1>
           <p className="muted">Short summary of terms — please contact us for full legal text.</p>
         </div>
       </div>

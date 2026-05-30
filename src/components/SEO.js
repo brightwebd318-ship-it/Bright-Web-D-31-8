@@ -1,13 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 const SEO = ({ title, description, keywords, image, url, schema, noindex }) => {
+  const location = useLocation();
   const siteTitle = 'BrightWebD 31:8';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const siteDescription = description || 'Affordable web development and digital marketing for startups and small businesses in Kochi.';
-  const siteKeywords = keywords || 'webdevelopment in kochi, web designing, web desiging, react webdevelopment in kochi, small websites, digital marketing agency kochi, website design kerala, affordable web developers, startup website design, small business web solutions';
+  const siteKeywords = keywords || 'webdevelopment in kochi, web design kochi, web development kochi, SEO agency Kochi, best SEO company Kochi, web designing, react webdevelopment in kochi, small websites, digital marketing agency kochi, website design kerala, affordable web developers, startup website design, small business web solutions';
   const siteImage = image || 'https://brightwebd.com/logo512.png';
-  const siteUrl = url || 'https://brightwebd.com/';
+  const siteUrl = url || `https://brightwebd.com${location.pathname}`;
 
   // Default Organization/LocalBusiness Schema
   const defaultSchema = {

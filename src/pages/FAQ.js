@@ -31,7 +31,7 @@ export default function FAQ(){
       <div className="support-hero">
         <img src={Ill} alt="support illustration" className="support-ill" />
         <div>
-          <h2>Frequently Asked Questions</h2>
+          <h1>Frequently Asked Questions</h1>
           <p className="muted">Answers to common questions about our services and processes.</p>
         </div>
       </div>

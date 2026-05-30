@@ -36,7 +36,7 @@ export default function Testimonials() {
         description="Read what our clients say about BrightWebD 31:8. Real success stories from startups and businesses in Kochi."
         keywords="BrightWebD testimonials, client reviews, web development success stories Kochi"
       />
-      <h2>Client Testimonials & Success Stories</h2>
+      <h1>Client Testimonials &amp; Success Stories</h1>
       <p className="muted">Real feedback from real clients. Here's what they've accomplished with Bright Web D 31:8.</p>
 
       <div className="testimonials-grid">

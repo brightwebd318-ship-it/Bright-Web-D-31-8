@@ -33,6 +33,7 @@ export default function WebDesignServices() {
         title="Web Design Services & Custom Business Website Design"
         description="BrightWebD is a premier web design company creating conversion-focused web design services, corporate website redesigns, and premium branding."
         keywords="web design services, business website design, web design company, website redesign services, luxury UI UX design Kochi"
+        image="https://brightwebd.com/assets/slide_marketing.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",

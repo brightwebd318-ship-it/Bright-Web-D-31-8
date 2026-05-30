@@ -13,7 +13,7 @@ export default function Refund(){
       <div className="support-hero">
         <img src={Ill} alt="refund illustration" className="support-ill" />
         <div>
-          <h2>Refund &amp; Cancellation Policy</h2>
+          <h1>Refund &amp; Cancellation Policy</h1>
           <p className="muted">Clear terms for refunds and cancellations on web development projects.</p>
         </div>
       </div>

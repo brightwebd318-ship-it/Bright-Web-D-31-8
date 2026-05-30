@@ -33,6 +33,7 @@ export default function SEOServices() {
         title="SEO Agency & Professional SEO Experts Kochi"
         description="BrightWebD is a results-driven SEO agency. Our SEO experts build high-performance search marketing systems and metadata architectures."
         keywords="SEO agency, SEO experts, web design services, digital solutions company, technical search marketing"
+        image="https://brightwebd.com/assets/slide_seo.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
