@@ -5,12 +5,12 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: 'Director',
-      company: 'EkathaCabsCohin',
+      company: 'EkathaCabs Cochin',
       role: 'Client',
       feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!',
       rating: 5,
       metric: 'Excellent Online Presence',
-      link: 'https://www.ekthacabscochin.com/'
+      link: 'https://ekthacabscochin.com'
     },
     {
       name: 'Client',

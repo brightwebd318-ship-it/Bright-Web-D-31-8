@@ -3,7 +3,8 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, ShieldCheck, Zap, Laptop, BarChart2, Star, CheckCircle, 
-  HelpCircle, ChevronRight, Compass, Target, Code, Play, RefreshCw, Sparkles 
+  HelpCircle, ChevronRight, Compass, Target, Code, Play, RefreshCw, Sparkles,
+  ExternalLink
 } from 'lucide-react';
 import Contact from './Contact';
 
@@ -191,7 +192,8 @@ export default function Home() {
       desc: "Custom React booking dashboard for cab fleets in Kochi. Real-time scheduling modules, mobile layout adjustments.",
       metric: "140% Booking Growth",
       metrics: { clicks: "+82%", conversion: "14.2%", speed: "1.2s" },
-      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80"
+      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80",
+      liveLink: "https://ekthacabscochin.com"
     },
     {
       title: "Home2Home Real Estate",
@@ -199,7 +201,8 @@ export default function Home() {
       desc: "Premium real estate showcase displaying immersive catalog cards, advanced filters, and Lead capture inquiries.",
       metric: "+120% Leads Generated",
       metrics: { clicks: "+110%", conversion: "8.6%", speed: "1.4s" },
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+      liveLink: "https://brightwebd318-ship-it.github.io/HOME2HOME/"
     },
     {
       title: "Zest Headless E-store",
@@ -613,9 +616,21 @@ export default function Home() {
                   </div>
 
                   <div className="portfolio-cta-row">
-                    <Link to="/contact" className="btn btn-secondary" style={{ padding: '8px 16px', fontSize: '13px' }}>
-                      Inquire Details
-                    </Link>
+                    {item.liveLink ? (
+                      <a 
+                        href={item.liveLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="btn btn-secondary" 
+                        style={{ padding: '8px 16px', fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                      >
+                        Live Preview <ExternalLink size={14} />
+                      </a>
+                    ) : (
+                      <Link to="/contact" className="btn btn-secondary" style={{ padding: '8px 16px', fontSize: '13px' }}>
+                        Inquire Details
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -646,7 +661,15 @@ export default function Home() {
                     <img src={t.avatar} alt={t.name} className="testimonial-avatar" />
                     <div className="testimonial-client-meta">
                       <h4>{t.name}</h4>
-                      <p>{t.role}, {t.company}</p>
+                      <p>
+                        {t.role}, {t.link ? (
+                          <a href={t.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                            {t.company}
+                          </a>
+                        ) : (
+                          t.company
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>
