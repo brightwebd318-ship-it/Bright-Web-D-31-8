@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { Mail, MessageSquare, Phone, Upload, CheckCircle, Clock } from 'lucide-react';
 
-export default function Contact({ isSection = false }) {
+export default function Contact({ isSection = false, openCalendly }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,6 +37,10 @@ export default function Contact({ isSection = false }) {
       });
       setSent(true);
       setLoading(false);
+      
+      const text = `Hi BrightWebD! I would like to submit a project request:\n\n*Name:* ${formData.name}\n*Company:* ${formData.company || 'N/A'}\n*Email:* ${formData.email}\n*Budget Threshold:* ${formatBudget(formData.budget)}\n*Brief:* ${formData.message}\n*Design Asset:* ${file ? file.name : 'No file uploaded'}`;
+      const whatsappUrl = `https://wa.me/919074487245?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
       
       // Push event to console for mock CRM integration
       console.log('CRM INTEGRATION LOG - NEW INQUIRY RECEIVED:', {
@@ -119,7 +123,7 @@ export default function Contact({ isSection = false }) {
               <MessageSquare size={32} style={{ color: 'var(--primary)', marginBottom: '12px', margin: '0 auto 12px' }} />
               <h4 style={{ fontSize: '15px', fontWeight: 'bold', marginBottom: '8px' }}>Free 30-Min Consultation</h4>
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px' }}>Prefer booking an instant video slot with our software architects?</p>
-              <button onClick={() => window.scrollTo(0, 0)} className="btn btn-secondary" style={{ width: '100%', padding: '10px' }}>
+              <button onClick={openCalendly} className="btn btn-secondary" style={{ width: '100%', padding: '10px' }}>
                 Open Scheduling Calendar
               </button>
             </div>

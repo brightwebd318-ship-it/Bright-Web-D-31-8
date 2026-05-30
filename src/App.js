@@ -162,11 +162,17 @@ function AppContent() {
     e.preventDefault();
     if (!subscribedEmail.trim()) return;
     setIsSubscribed(true);
+    const email = subscribedEmail;
     setTimeout(() => {
       setSubscribedEmail('');
       setIsSubscribed(false);
       setShowExitIntent(false);
       sessionStorage.setItem('exit_intent_dismissed', 'true');
+      
+      const text = `Hi BrightWebD! I would like to subscribe to your newsletter. My email address is: ${email}`;
+      const whatsappUrl = `https://wa.me/919074487245?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
+      
       alert('Subscription Successful! Your free website audit template has been sent.');
     }, 1200);
   };
@@ -266,7 +272,7 @@ function AppContent() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact openCalendly={() => setCalendlyOpen(true)} />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
@@ -445,7 +451,9 @@ function AppContent() {
                     className="btn btn-secondary" 
                     style={{ fontSize: '13px', padding: '10px' }}
                     onClick={() => {
-                      alert(`Meeting scheduled for tomorrow at ${time}! We will email you the video link.`);
+                      const text = `Hi BrightWebD! I would like to book a 30-Min Discovery Session/Consultation tomorrow at ${time}.`;
+                      const whatsappUrl = `https://wa.me/919074487245?text=${encodeURIComponent(text)}`;
+                      window.open(whatsappUrl, '_blank');
                       setCalendlyOpen(false);
                     }}
                   >
