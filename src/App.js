@@ -141,17 +141,21 @@ function AppContent() {
     setMessages(prev => [...prev, { text, sender: 'user' }]);
     setChatInput('');
 
+    // Open WhatsApp with the message text
+    const whatsappUrl = `https://wa.me/919074487245?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
+
     // Simulate AI response logic
     setTimeout(() => {
-      let replyText = "Thank you for asking! A representative will connect with you shortly. You can also book a free 30-minute consultation slot by clicking the 'Book Consultation' button at the top.";
+      let replyText = "Thank you! I have opened a WhatsApp chat to +91 90744 87245 with your message. You can chat with our team directly there. A representative will connect with you shortly.";
       const query = text.toLowerCase();
       
       if (query.includes('price') || query.includes('cost')) {
-        replyText = "We offer tailored web development pricing: Starter packages at $1,499 (ideal for local businesses), Professional packages at $2,999 (recommended for growing startups), and custom Enterprise systems. Which one matches your business goals?";
+        replyText = "We offer tailored web development pricing: Starter packages at $1,499 (ideal for local businesses), Professional packages at $2,999 (recommended for growing startups), and custom Enterprise systems. I have opened WhatsApp to +91 90744 87245 so you can query our team directly.";
       } else if (query.includes('seo') || query.includes('rank')) {
-        replyText = "Our SEO systems are built to convert! We perform full structural indexing, FAQ/Schema setups, keyword target copywriting, and local SEO integrations. Would you like a free SEO audit on your current site?";
+        replyText = "Our SEO systems are built to convert! We perform full structural indexing, FAQ/Schema setups, keyword target copywriting, and local SEO integrations. I have opened WhatsApp to +91 90744 87245 to get you connected for a free audit.";
       } else if (query.includes('contact') || query.includes('hire') || query.includes('portfolio')) {
-        replyText = "Awesome! We have delivered over 100+ websites. You can explore our Portfolio in the navigation or directly drop a project request using our Budget Inquiry Form in the Contact page!";
+        replyText = "Awesome! We have delivered over 100+ websites. You can explore our Portfolio in the navigation. I have opened WhatsApp to +91 90744 87245 to direct your inquiry to our engineering leads.";
       }
 
       setMessages(prev => [...prev, { text: replyText, sender: 'ai' }]);
@@ -392,7 +396,10 @@ function AppContent() {
       {chatOpen && (
         <div className="glass-card chat-widget-drawer-card">
           <div className="chat-drawer-header">
-            <h3>AI Chat Partner</h3>
+            <div>
+              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 'bold' }}>AI Chat Partner</h3>
+              <span style={{ fontSize: '11px', opacity: 0.8, color: 'var(--primary)' }}>WhatsApp: +91 90744 87245</span>
+            </div>
             <button onClick={() => setChatOpen(false)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>
               <X size={18} />
             </button>
