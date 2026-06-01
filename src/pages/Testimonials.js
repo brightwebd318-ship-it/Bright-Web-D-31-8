@@ -4,18 +4,18 @@ import SEO from '../components/SEO';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Director',
+      name: 'Vivek',
       company: 'EkathaCabs Cochin',
-      role: 'Client',
+      role: 'Founder',
       feedback: 'Perfect service and an amazing website for our cab business. Highly recommended!',
       rating: 5,
       metric: 'Excellent Online Presence',
       link: 'https://ekthacabscochin.com'
     },
     {
-      name: 'Client',
+      name: 'Jibin',
       company: 'Home2Home',
-      role: 'Client',
+      role: 'Founder',
       feedback: 'Outstanding service and a brilliant website delivered. Highly recommended!',
       rating: 5,
       metric: 'Excellent Online Presence',

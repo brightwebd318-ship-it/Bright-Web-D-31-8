@@ -157,8 +157,8 @@ export default function Home() {
   // Testimonials slide data
   const testimonials = [
     {
-      name: "Harish Kumar",
-      role: "Director",
+      name: "Vivek",
+      role: "Founder",
       company: "EkathaCabs Cochin",
       rating: 5,
       feedback: "BrightWebD completely redesigned our local cab booking platform. We saw our online reservation rate surge by 140% in Kochi within the first two months. High trust and elite support!",
@@ -166,8 +166,8 @@ export default function Home() {
       link: "https://ekthacabscochin.com"
     },
     {
-      name: "Sneha Nair",
-      role: "Operations Head",
+      name: "Jibin",
+      role: "Founder",
       company: "Home2Home Real Estate",
       rating: 5,
       feedback: "From start to finish, the communication was stellar. Our website scores a 98 on Lighthouse and load speeds are under 1.5 seconds. Their technical SEO schema is top-tier.",
