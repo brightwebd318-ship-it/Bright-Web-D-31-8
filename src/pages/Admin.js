@@ -11,7 +11,7 @@ export default function Admin() {
   // Initialize mock inquiry data
   const mockInquiries = [
     { id: 1, name: "Vivek", company: "EkathaCabs Cochin", email: "vivek@ekathacabs.com", budget: "$1,499 USD", status: "Closed", date: "May 29, 2026", msg: "Refactoring and mobile responsiveness optimization for Kochi cab fleets." },
-    { id: 2, name: "Jibin", company: "Home2Home Real Estate", email: "jibin@home2home.com", budget: "$2,999 USD", status: "Contacted", date: "May 28, 2026", msg: "Luxury property search UI grid containing Figma styles." },
+    { id: 2, name: "Maria Joy", company: "Home2Home Real Estate", email: "maria@home2home.com", budget: "$2,999 USD", status: "Contacted", date: "May 28, 2026", msg: "Luxury property search UI grid containing Figma styles." },
     { id: 3, name: "Thomas Abraham", company: "Zest Retail Systems", email: "thomas@zestretail.com", budget: "$10,000+ USD", status: "New", date: "May 27, 2026", msg: "Headless Stripe/Shopify integration for multi-country storefronts." }
   ];
 

@@ -13,7 +13,7 @@ export default function Testimonials() {
       link: 'https://ekthacabscochin.com'
     },
     {
-      name: 'Jibin',
+      name: 'Maria Joy',
       company: 'Home2Home',
       role: 'Founder',
       feedback: 'Outstanding service and a brilliant website delivered. Highly recommended!',

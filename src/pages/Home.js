@@ -166,7 +166,7 @@ export default function Home() {
       link: "https://ekthacabscochin.com"
     },
     {
-      name: "Jibin",
+      name: "Maria Joy",
       role: "Founder",
       company: "Home2Home Real Estate",
       rating: 5,
