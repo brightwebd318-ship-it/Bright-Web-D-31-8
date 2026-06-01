@@ -13,7 +13,7 @@ export const blogArticles = [
     author: "Dibin Bright",
     excerpt: "Learn how the top 1% of web design companies construct visual layouts, call-to-actions, and page speeds to convert regular traffic into paying clients.",
     content: "When businesses invest in web design services, they often focus entirely on vanity aesthetics. While looks are important, the primary goal of your website should be client conversion. High-converting business website design is an engineering discipline. It combines visual path routing, color contrasts, page speeds, and trust elements. In this guide, we break down the exact strategies we use at BrightWebD to build conversion engines for our corporate partners.",
-    image: "https://images.unsplash.com/photo-1547119944-4725b51a5e70?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "Why Technical SEO is Critical for Startup Search Engine Rankings",
